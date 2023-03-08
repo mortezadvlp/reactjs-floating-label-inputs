@@ -1,0 +1,11 @@
+
+.option-button {
+    border: none;
+    border-radius: 0.5rem;
+    
+}
+
+.option-button-white:hover {
+    background-color: rgb(214, 235, 255) !important;
+}
+

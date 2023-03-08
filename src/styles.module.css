@@ -7,3 +7,435 @@
   font-size: 2em;
   text-align: center;
 }
+
+/*=== From Bootstrap ====*/
+
+@charset "UTF-8";/*!
+* Bootstrap  v5.2.0 (https://getbootstrap.com/)
+* Copyright 2011-2022 The Bootstrap Authors
+* Copyright 2011-2022 Twitter, Inc.
+* Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+*/:root {
+  --bs-blue:#0d6efd;
+  --bs-indigo:#6610f2;
+  --bs-purple:#6f42c1;
+  --bs-pink:#d63384;
+  --bs-red:#dc3545;
+  --bs-orange:#fd7e14;
+  --bs-yellow:#ffc107;
+  --bs-green:#198754;
+  --bs-teal:#20c997;
+  --bs-cyan:#0dcaf0;
+  --bs-black:#000;
+  --bs-white:#fff;
+  --bs-gray:#6c757d;
+  --bs-gray-dark:#343a40;
+  --bs-gray-100:#f8f9fa;
+  --bs-gray-200:#e9ecef;
+  --bs-gray-300:#dee2e6;
+  --bs-gray-400:#ced4da;
+  --bs-gray-500:#adb5bd;
+  --bs-gray-600:#6c757d;
+  --bs-gray-700:#495057;
+  --bs-gray-800:#343a40;
+  --bs-gray-900:#212529;
+  --bs-primary:#0d6efd;
+  --bs-secondary:#6c757d;
+  --bs-success:#198754;
+  --bs-info:#0dcaf0;
+  --bs-warning:#ffc107;
+  --bs-danger:#dc3545;
+  --bs-light:#f8f9fa;
+  --bs-dark:#212529;
+  --bs-primary-rgb:13,110,253;
+  --bs-secondary-rgb:108,117,125;
+  --bs-success-rgb:25,135,84;
+  --bs-info-rgb:13,202,240;
+  --bs-warning-rgb:255,193,7;
+  --bs-danger-rgb:220,53,69;
+  --bs-light-rgb:248,249,250;
+  --bs-dark-rgb:33,37,41;
+  --bs-white-rgb:255,255,255;
+  --bs-black-rgb:0,0,0;
+  --bs-body-color-rgb:33,37,41;
+  --bs-body-bg-rgb:255,255,255;
+  --bs-font-sans-serif:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  --bs-font-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --bs-gradient:linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --bs-body-font-family:var(--bs-font-sans-serif);
+  --bs-body-font-size:1rem;
+  --bs-body-font-weight:400;
+  --bs-body-line-height:1.5;
+  --bs-body-color:#212529;
+  --bs-body-bg:#fff;
+  --bs-border-width:1px;
+  --bs-border-style:solid;
+  --bs-border-color:#dee2e6;
+  --bs-border-color-translucent:rgba(0, 0, 0, 0.175);
+  --bs-border-radius:0.375rem;
+  --bs-border-radius-sm:0.25rem;
+  --bs-border-radius-lg:0.5rem;
+  --bs-border-radius-xl:1rem;
+  --bs-border-radius-2xl:2rem;
+  --bs-border-radius-pill:50rem;
+  --bs-link-color:#0d6efd;
+  --bs-link-hover-color:#0a58ca;
+  --bs-code-color:#d63384;
+  --bs-highlight-bg:#fff3cd
+}
+
+@font-face {
+  font-family: TwemojiMozilla;
+  src: local("TwemojiMozilla"),
+      url("./fonts/TwemojiMozilla.ttf") format("truetype");
+}
+
+.floatEnd {
+  float:right!important
+}
+.dFlex {
+  display:flex!important;
+}
+.flexRow {
+  flex-direction:row!important;
+}
+.py1 {
+  padding-top:.25rem!important;
+  padding-bottom:.25rem!important;
+}
+.textPrimary {
+  --bs-text-opacity:1;
+  color:rgba(var(--bs-primary-rgb),var(--bs-text-opacity))!important;
+}
+.textDark {
+  --bs-text-opacity:1;
+  color:rgba(var(--bs-dark-rgb),var(--bs-text-opacity))!important;
+}
+.myAuto {
+  margin-top:auto!important;
+  margin-bottom:auto!important;
+}
+.textWrap {
+  white-space:normal!important;
+}
+.ps1 {
+  padding-left:.25rem!important;
+}
+.border0 {
+  border:0!important;
+}
+.alignItemsStretch {
+  align-items:stretch!important;
+}
+.borderEnd {
+  border-right:var(--bs-border-width) var(--bs-border-style) var(--bs-border-color)!important;
+}
+.w100 {
+  width:100%!important;
+}
+.h100 {
+  height:100%!important;
+}
+.p1 {
+  padding:.25rem!important;
+}
+.py2 {
+  padding-top:.5rem!important;
+  padding-bottom:.5rem!important;
+}
+.px1 {
+  padding-left:.25rem!important;
+  padding-right:.25rem!important;
+}
+.positionRelative {
+  position:relative!important;
+}
+.alignItemsCenter {
+  align-items:center!important;
+}
+.alignSelfStretch{
+  align-self:stretch!important;
+}
+.gap1 {
+  gap:.25rem!important;
+}
+.mt4 {
+  margin-top:1.5rem!important;
+}
+.border {
+  border:var(--bs-border-width) var(--bs-border-style) var(--bs-border-color)!important;
+}
+.rounded1 {
+  border-radius:var(--bs-border-radius-sm)!important;
+}
+.border2 {
+  --bs-border-width:2px
+}
+.m0 {
+  margin:0!important;
+}
+.p0 {
+  padding:0!important;
+}
+.me1 {
+  margin-right:.25rem!important
+}
+.positionAbsolute {
+  position:absolute!important;
+}
+.start0 {
+  left:0!important;
+}
+.top0 {
+  top:0!important;
+}
+.ms1 {
+  margin-left:.25rem!important;
+}
+.borderPrimary {
+  --bs-border-opacity:1;
+  border-color:rgba(var(--bs-primary-rgb),var(--bs-border-opacity))!important;
+}
+.border1 {
+  --bs-border-width:1px;
+}
+.gap2 {
+  gap:.5rem!important;
+}
+.justifyContentBetween {
+  justify-content:space-between!important;
+}
+.px3 {
+  padding-right:1rem!important;
+  padding-left:1rem!important;
+}
+.bgPrimary {
+  --bs-bg-opacity:1;
+  background-color:rgba(var(--bs-primary-rgb),var(--bs-bg-opacity))!important;
+}
+.textWhite {
+  --bs-text-opacity:1;
+  color:rgba(var(--bs-white-rgb),var(--bs-text-opacity))!important;
+}
+.bgTransparent {
+  --bs-bg-opacity:1;
+  background-color:transparent!important;
+}
+.pt2 {
+  padding-top:.5rem!important;
+}
+.roundedStart {
+  border-bottom-left-radius:var(--bs-border-radius)!important;
+  border-top-left-radius:var(--bs-border-radius)!important;
+}
+.roundedEnd {
+  border-bottom-right-radius:var(--bs-border-radius)!important;
+  border-top-right-radius:var(--bs-border-radius)!important;
+}
+
+/*=== From mine ====*/
+
+.fsNormal {
+  font-size: 100%;
+}
+.fsSmaller {
+  font-size: 80%;
+}
+.fsGreater {
+  font-size: 110%;
+}
+
+.borderDisable {
+  border-color: darkgray;
+}
+.textDisable {
+  color: rgb(169, 169, 169);
+}
+.bgDisable {
+  /*background-color: rgb(169, 169, 169);*/
+  background-color: rgba(240, 240, 240, 0.35);
+}
+.bgButtonDisable {
+  background-color: rgb(169, 169, 169);
+}
+
+.inputNumberNoArrows::-webkit-outer-spin-button,
+.inputNumberNoArrows::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.inputNumberNoArrows {
+  -moz-appearance: textfield;
+}
+
+.noOutline {
+  outline: none !important;
+}
+.noOutline:focus {
+  outline: none !important;
+}
+
+.noBorder-onfocus:focus {
+  border: none !important;
+}
+
+.noBorder {
+  border: none !important;
+}
+
+.borderTransparent {
+  border: 1px solid transparent !important;
+}
+
+.textGray {
+  color: gray;
+}
+
+.zTop {
+  z-index: 100;
+}
+
+.verticalCenter {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.clip {
+  overflow: hidden;
+}
+
+.hAuto {
+  height: auto !important;
+}
+
+.bgWhite {
+  background-color: white;
+}
+
+.cursorPointing {
+  cursor: pointer !important;
+}
+
+.inputLabelFocus {
+  animation: input-label-focus-anim 0.25s linear;
+  animation-fill-mode:forwards;
+}
+@keyframes input-label-focus-anim {
+  from {
+      margin-top: 1.7rem;
+      padding-top: 0.25rem;
+      font-size: 100%;
+  }
+  to {
+      margin-top: 0rem;
+      padding-top: 0;
+      font-size: 80%;
+  }
+}
+
+.inputLabelBlur {
+  animation: input-label-blur-anim 0.25s linear;
+  animation-fill-mode:forwards;
+}
+@keyframes input-label-blur-anim {
+  from {
+      margin-top: 0rem;
+      padding-top: 0;
+      font-size: 80%;
+  }
+  to {
+      margin-top: 1.7rem;
+      padding-top: 0.25rem;
+      font-size: 100%;
+  }
+}
+.optionButton {
+  border: none;
+  border-radius: 0.5rem;
+  
+}
+.optionButtonWhite:hover {
+  background-color: rgb(214, 235, 255) !important;
+}
+
+:global .flag-emoji {
+    font-family: TwemojiMozilla;
+    font-size: larger;
+    margin-right: 0.25rem;
+  }
+
+.selectLabelPhoneFocus {
+  animation: select-label-phone-focus-anim 0.25s linear;
+  animation-fill-mode:forwards;
+}
+@keyframes select-label-phone-focus-anim {
+  from {
+      margin-top: 1.5rem;
+      padding-top: 0.25rem;
+      margin-left: 85px;
+      font-size: 100%;
+  }
+  to {
+      margin-top: 0;
+      padding-top: 0;
+      margin-left: 0.25rem;
+      font-size: 80%;
+  }
+}
+
+.selectLabelPhoneBlur {
+  animation: select-label-phone-blur-anim 0.25s linear;
+  animation-fill-mode:forwards;
+}
+@keyframes select-label-phone-blur-anim {
+  from {
+      margin-top: 0;
+      padding-top: 0;
+      margin-left: 0.25rem;
+      font-size: 80%;
+  }
+  to {
+      margin-top: 1.5rem;
+      padding-top: 0.25rem;
+      margin-left: 85px;
+      font-size: 100%;
+  }
+}
+
+.selectLabelFocus {
+  animation: select-label-focus-anim 0.25s linear;
+  animation-fill-mode:forwards;
+}
+@keyframes select-label-focus-anim {
+  from {
+      margin-top: 1.7rem;
+      padding-top: 0.25rem;
+      font-size: 100%;
+  }
+  to {
+      margin-top: 0;
+      padding-top: 0;
+      font-size: 80%;
+  }
+}
+
+.selectLabelBlur {
+  animation: select-label-blur-anim 0.25s linear;
+  animation-fill-mode:forwards;
+}
+@keyframes select-label-blur-anim {
+  from {
+      margin-top: 0;
+      padding-top: 0;
+      font-size: 80%;
+  }
+  to {
+      margin-top: 1.7rem;
+      padding-top: 0.25rem;
+      font-size: 100%;
+  }
+}
+
+

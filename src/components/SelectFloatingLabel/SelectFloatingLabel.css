@@ -1,0 +1,45 @@
+
+.fs-normal {
+    font-size: 100%;
+}
+.fs-smaller {
+    font-size: 80%;
+}
+.fs-greater {
+    font-size: 110%;
+}
+
+.select-label-focus {
+    animation: select-label-focus-anim 0.25s linear;
+    animation-fill-mode:forwards;
+}
+@keyframes select-label-focus-anim {
+    from {
+        margin-top: 1.5rem;
+        padding-top: 0.25rem;
+        font-size: 100%;
+    }
+    to {
+        margin-top: 0;
+        padding-top: 0;
+        font-size: 80%;
+    }
+}
+
+.select-label-blur {
+    animation: select-label-blur-anim 0.25s linear;
+    animation-fill-mode:forwards;
+}
+@keyframes select-label-blur-anim {
+    from {
+        margin-top: 0;
+        padding-top: 0;
+        font-size: 80%;
+    }
+    to {
+        margin-top: 1.5rem;
+        padding-top: 0.25rem;
+        font-size: 100%;
+    }
+}
+  

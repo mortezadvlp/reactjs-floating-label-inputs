@@ -1,0 +1,50 @@
+
+
+/*@font-face {
+    font-family: TwemojiMozilla;
+    src: local("TwemojiMozilla"),
+        url("../../fonts/TwemojiMozilla.ttf") format("truetype");
+}
+
+.flag-emoji {
+    font-family: TwemojiMozilla;
+    font-size: larger;
+}*/
+
+.select-label-phone-focus {
+    animation: select-label-phone-focus-anim 0.25s linear;
+    animation-fill-mode:forwards;
+}
+@keyframes select-label-phone-focus-anim {
+    from {
+        margin-top: 1.5rem;
+        padding-top: 0.25rem;
+        margin-left: 85px;
+        font-size: 100%;
+    }
+    to {
+        margin-top: 0;
+        padding-top: 0;
+        margin-left: 0.25rem;
+        font-size: 80%;
+    }
+}
+
+.select-label-phone-blur {
+    animation: select-label-phone-blur-anim 0.25s linear;
+    animation-fill-mode:forwards;
+}
+@keyframes select-label-phone-blur-anim {
+    from {
+        margin-top: 0;
+        padding-top: 0;
+        margin-left: 0.25rem;
+        font-size: 80%;
+    }
+    to {
+        margin-top: 1.5rem;
+        padding-top: 0.25rem;
+        margin-left: 85px;
+        font-size: 100%;
+    }
+}
