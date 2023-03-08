@@ -13,7 +13,7 @@ npm install --save reactjs-floating-label-inputs
 ## Online Demo
 
 Visit this link:
-[https://simacoders.ir/features/#FloatingLabelInputs](https://simacoders.ir/features/#ReactJsFloatingLabelInputs)
+[https://simacoders.ir/features/#ReactJsFloatingLabelInputs](https://simacoders.ir/features/#ReactJsFloatingLabelInputs)
 
 
 ## Usage

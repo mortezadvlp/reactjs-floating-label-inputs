@@ -18,9 +18,9 @@ export default function OptionalQuestion({
                 style={{minHeight: inputComponentHeight}}>
                 <span className={`${styles.textDark} ${styles.myAuto} ${styles.textWrap}`} >{title}</span>
                 <div className={`${styles.dFlex} ${styles.flexRow} ${styles.gap2} ${styles.myAuto}`} >
-                    <button className={`${styles.cursorPointing} ${styles.optionButton} ${styles.px3} ${styles.py2} ${value ? (`${disabled ? styles.bgButtonDisable : `${styles.bgPrimary} bg-primary`} ${styles.textWhite}`) : `${styles.bgTransparent} ${styles.textDark} ${styles.optionButtonWhite}`}`} 
+                    <button className={`${styles.cursorPointing} ${styles.optionButton} ${styles.px3} ${styles.py1} ${value ? (`${disabled ? styles.bgButtonDisable : `${styles.bgPrimary} bg-primary`} ${styles.textWhite}`) : `${styles.bgTransparent} ${styles.textDark} ${styles.optionButtonWhite}`}`} 
                         onClick={() => onChangeValue(true)} disabled={disabled}>{trueOption}</button>
-                    <button className={`${styles.cursorPointing} ${styles.optionButton} ${styles.px3} ${styles.py2} ${!value ? (`${disabled ? styles.bgButtonDisable : `${styles.bgPrimary} bg-primary`} ${styles.textWhite}`) : `${styles.bgTransparent} ${styles.textDark} ${styles.optionButtonWhite}`}`} 
+                    <button className={`${styles.cursorPointing} ${styles.optionButton} ${styles.px3} ${styles.py1} ${!value ? (`${disabled ? styles.bgButtonDisable : `${styles.bgPrimary} bg-primary`} ${styles.textWhite}`) : `${styles.bgTransparent} ${styles.textDark} ${styles.optionButtonWhite}`}`} 
                         onClick={() => onChangeValue(false)} disabled={disabled} >{falseOption}</button>
                 </div>
             </div>
