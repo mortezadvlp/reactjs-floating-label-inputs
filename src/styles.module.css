@@ -10,12 +10,8 @@
 
 /*=== From Bootstrap ====*/
 
-@charset "UTF-8";/*!
-* Bootstrap  v5.2.0 (https://getbootstrap.com/)
-* Copyright 2011-2022 The Bootstrap Authors
-* Copyright 2011-2022 Twitter, Inc.
-* Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-*/:root {
+@charset "UTF-8";
+:root {
   --rjfli-blue:#0d6efd;
   --rjfli-indigo:#6610f2;
   --rjfli-purple:#6f42c1;
@@ -83,13 +79,13 @@
   --rjfli-code-color:#d63384;
   --rjfli-highlight-bg:#fff3cd
 }
-
+/*
 @font-face {
   font-family: TwemojiMozilla;
   src: local("TwemojiMozilla"),
       url("./fonts/TwemojiMozilla.ttf") format("truetype");
 }
-
+*/
 .floatEnd {
   float:right!important
 }
@@ -361,7 +357,7 @@
 }
 
 :global .flag-emoji {
-    font-family: TwemojiMozilla;
+    font-family: "Twemoji Country Flags"; /*TwemojiMozilla;*/
     font-size: larger;
     margin-right: 0.25rem;
   }

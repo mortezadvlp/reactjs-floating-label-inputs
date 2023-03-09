@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './main.min.css';
 
 import { 
   NormalInputFloatingLabel, DateInputFloatingLabel, 

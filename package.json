@@ -1,6 +1,6 @@
 {
   "name": "reactjs-floating-label-inputs",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "ReactJs Component: Inputs with floating labels",
   "author": "mortezadvlp",
   "license": "MIT",
@@ -51,6 +51,7 @@
     "dist"
   ],
   "dependencies": {
+    "country-flag-emoji-polyfill": "^0.1.4",
     "country-list-with-dial-code-and-flag": "^3.0.2",
     "react-multi-date-picker": "^3.3.4",
     "react-select": "^5.7.0"

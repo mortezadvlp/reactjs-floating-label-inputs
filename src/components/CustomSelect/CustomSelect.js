@@ -4,6 +4,7 @@ import Select, { createFilter } from 'react-select';
 import { defaultTheme } from 'react-select';
 import { countryCodes, defaultCountryCode, inputComponentHeight } from '../constants';
 import styles from '../../styles.module.css';
+import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
 
 const { colors } = defaultTheme;
 
@@ -14,6 +15,10 @@ export default function CustomSelect ({
   const [isOpen, setIsOpen] = useState(false);
   const [countryOption, setCountryOption] = useState('');
   const inputRef = useRef(null);
+
+
+  polyfillCountryFlagEmojis();
+
 
   useEffect(() => {
     if(forceFocus) {
