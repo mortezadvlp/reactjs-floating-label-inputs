@@ -15,11 +15,11 @@ export const ExampleComponent = ({ text }) => {
 }
 
 
-export const NormalInputFloatingLabel = ({label = 'Title', className = '', lineCount='1', type = 'text', disabled = false, icon = null, typingValidator = '',
+export const NormalInputFloatingLabel = ({label = 'Title', className = '', lineCount='1', type = 'text', disabled = false, labelType = 1, icon = null, typingValidator = '',
                 value = '', onChangeValue, iconClickable = false, onIconClick = ()=>{}, onFocus = ()=>{}, onBlur = ()=>{}}) => {
   return (
     <InputFloatingLabel label={label} className={className} lineCount={lineCount} format='' disabled={disabled} icon={icon} typingValidator={typingValidator}
-      type = {type} value={value} onChangeValue={onChangeValue} iconClickable={iconClickable} onIconClick={onIconClick}
+      type = {type} value={value} onChangeValue={onChangeValue} iconClickable={iconClickable} onIconClick={onIconClick} labelType={labelType}
       onFocus={onFocus} onBlur={onBlur} />
   )
 }

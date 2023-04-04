@@ -33,15 +33,15 @@ const App = () => {
   const [checkData, setCheckData] = useState(false)
 
   return (
-    <section style={{maxWidth: '400px', display: 'flex', flexDirection: 'column', gap: '0.5rem', marginLeft: 'auto', marginRight: 'auto', alignItems: 'stretch'}}>
+    <section style={{maxWidth: '400px', display: 'flex', flexDirection: 'column',  marginLeft: 'auto', marginRight: 'auto', alignItems: 'stretch'}}>
       <CheckBoxInputFloatingLabel className = '' text='Disable All'
             isChecked={disableAll} onChangeChecked={(val) => setDisableAll(val)} />
 
-      <NormalInputFloatingLabel className='' label='Simple Input' type='text' disabled={disableAll}
+      <NormalInputFloatingLabel className='' label='Simple Input' type='text' disabled={disableAll} labelType='1'
           value={simpleData} onChangeValue={(val) => setSimpleData(val)} />
-      <NormalInputFloatingLabel className='' label='Simple Input (integer)' type='IntNumber' disabled={disableAll}
+      <NormalInputFloatingLabel className='' label='Simple Input (integer)' type='IntNumber' disabled={disableAll} labelType='1'
           value={simpleDataInt} onChangeValue={(val) => setSimpleDataInt(val)} />
-      <NormalInputFloatingLabel className='' label='Simple Input (float)' type='FloatNumber' disabled={disableAll}
+      <NormalInputFloatingLabel className='' label='Simple Input (float)' type='FloatNumber' disabled={disableAll} labelType='2'
           value={simpleDataFloat} onChangeValue={(val) => setSimpleDataFloat(val)} />
       <NormalInputFloatingLabel className='' label='Simple Input (Custom icon)' type='text' disabled={disableAll}
           value={simpleDataIcon} onChangeValue={(val) => setSimpleDataIcon(val)}
