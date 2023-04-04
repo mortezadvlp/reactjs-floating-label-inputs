@@ -4,6 +4,8 @@
 
 [![NPM](https://img.shields.io/npm/v/reactjs-floating-label-inputs.svg)](https://www.npmjs.com/package/reactjs-floating-label-inputs) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+## Is optimizing ...
+
 ## Install
 
 ```bash
