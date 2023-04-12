@@ -4,8 +4,8 @@ import { getList } from 'country-list-with-dial-code-and-flag'
 export const primaryColor = '#0d6efd';
 export const disabledColor = '#A9A9A9';
 export const disabledBgColor = '#F0F0F044';
-export const inputComponentHeight = '38px';
-export const inputComponentHeightPx = 38;
+export const inputComponentHeight = '35px';
+export const inputComponentHeightPx = 35;
 export const defaultCountryCode = 'IR';
 
 export const countries0 = [

@@ -2,14 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import Select, { createFilter } from 'react-select';
 import { defaultTheme } from 'react-select';
-import { countryCodes, defaultCountryCode, inputComponentHeight } from '../constants';
+import { countryCodes, defaultCountryCode, inputComponentHeight, inputComponentHeightPx } from '../constants';
 import styles from '../../styles.module.css';
 import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
 
 const { colors } = defaultTheme;
 
 export default function CustomSelect ({
-      countryValue = defaultCountryCode, phoneValue = '', setCountryValue = ()=>{}, setPhoneValue = ()=>{}, disabled = false,
+      countryValue = defaultCountryCode, phoneValue = '', setCountryValue = ()=>{}, setPhoneValue = ()=>{}, disabled = false, minHeight = inputComponentHeightPx,
       forceFocus = false, onFocus, onBlur }) {
 
   const [isOpen, setIsOpen] = useState(false);
@@ -59,12 +59,12 @@ export default function CustomSelect ({
 
   return (
     
-    <div tabIndex='-1' className={`${styles.w100} ${styles.alignSelfStretch} ${styles.border0}`} /*onBlur={() => onBlur()} onFocus={onFocus}*/ >
+    <div tabIndex='-1' className={`${styles.w100} ${styles.alignSelfStretch} ${styles.border0} ${styles.positionRelative}`} /*onBlur={() => onBlur()} onFocus={onFocus}*/ >
       <Dropdown
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         target={
-          <div className={`${styles.dFlex} ${styles.flexRow} ${styles.alignItemsStretch}`} style={{minHeight: inputComponentHeight}} >
+          <div className={`${styles.dFlex} ${styles.flexRow} ${styles.alignItemsStretch}`} style={{minHeight: `${minHeight}px`}} >
             <button style={{width: '90px'}} onClick={() => disabled ? {} : setIsOpen((prev) => !prev)}
               className={`${styles.noOutline} ${styles.border0} ${styles.borderEnd} ${styles.roundedStart}`}>
               {countryOption ? countryOption.label2 : 'Choose'}
@@ -75,27 +75,36 @@ export default function CustomSelect ({
           </div>
         }
       >
-        <Select
-          isDisabled={disabled}
-          autoFocus
-          backspaceRemovesValue={false}
-          components={{ DropdownIndicator, IndicatorSeparator: null }}
-          controlShouldRenderValue={false}
-          hideSelectedOptions={false}
-          isClearable={false}
-          menuIsOpen
-          onChange={(newValue) => {
-            setCountryValue(newValue.code);
-            setIsOpen(false);
-          }}
-          onBlur={() => setIsOpen(false)}
-          options={countryCodes}
-          placeholder="Search..."
-          //styles={selectStyles}
-          tabSelectsValue={false}
-          value={countryOption}
-          filterOption={createFilter(filterConfig)}
-        />
+        <div className={`${styles.w100} ${styles.positionAbsolute} ${styles.zTop}`} style={{top: `${minHeight + 2}px`}} >
+          <Select
+            styles={{
+              menu: (baseStyles, state) => ({
+                ...baseStyles,
+                top: '90%'
+              }),
+            }}
+            isDisabled={disabled}
+            autoFocus
+            backspaceRemovesValue={false}
+            components={{ DropdownIndicator, IndicatorSeparator: null }}
+            controlShouldRenderValue={false}
+            hideSelectedOptions={false}
+            isClearable={false}
+            menuIsOpen
+            onChange={(newValue) => {
+              setCountryValue(newValue.code);
+              setIsOpen(false);
+            }}
+            onBlur={() => setIsOpen(false)}
+            options={countryCodes}
+            placeholder="Search..."
+            //styles={selectStyles}
+            tabSelectsValue={false}
+            value={countryOption}
+            filterOption={createFilter(filterConfig)}
+          />
+        </div>
+        
       </Dropdown>
     </div>
   );
