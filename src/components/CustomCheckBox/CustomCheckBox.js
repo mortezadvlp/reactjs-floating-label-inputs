@@ -17,7 +17,7 @@ export default function CustomCheckBox({ text = 'Select me!', className = '', is
                 <SvgCheckEmpty className={disabled ? styles.textDisable : `${styles.textPrimary} text-pimary`} />
                 }
             </div>
-            <span className={`${styles.cursorPointing} ${styles.textDark} ${styles.myAuto} ${styles.textWrap} ${styles.ps1}`} role='button' onClick={() => disabled ? {} : onChangeChecked(!isChecked)} >{text}</span>
+            <span className={`${styles.cursorPointing} ${styles.textDark} ${styles.myAuto} ${styles.textWrap} ${styles.px1}`} role='button' onClick={() => disabled ? {} : onChangeChecked(!isChecked)} >{text}</span>
         </div>
     );
 }

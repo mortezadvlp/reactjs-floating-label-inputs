@@ -55,12 +55,12 @@ export default function DateFloatingLabel({ label = 'Title', className = '', dis
                         disabled={disabled}
                     />
                     {(value !== '')&&
-                        <div className={`${!disabled ? styles.cursorPointing : ''} ${styles.myAuto} ${styles.p0} ${styles.me1} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsCenter}`} onClick={() => disabled ? {} : onChangeValue('')} >
+                        <div className={`${!disabled ? styles.cursorPointing : ''} ${styles.myAuto} ${styles.p0} ${styles.mx1} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsCenter}`} onClick={() => disabled ? {} : onChangeValue('')} >
                             <SvgClose width='24px' height='24px' className={disabled ? styles.textDisable : `${styles.textPrimary} text-primary`} />
                         </div>
                     }
                     {hasIcon&&
-                        <div className={`${!disabled ? styles.cursorPointing : ''} ${styles.myAuto} ${styles.p0} ${styles.me1} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsCcenter}`} onClick={() => mainRef.current.openCalendar()} >
+                        <div className={`${!disabled ? styles.cursorPointing : ''} ${styles.myAuto} ${styles.p0} ${styles.mx1} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsCcenter}`} onClick={() => mainRef.current.openCalendar()} >
                             {icon
                             ?
                                 icon

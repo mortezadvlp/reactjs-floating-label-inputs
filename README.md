@@ -4,8 +4,6 @@
 
 [![NPM](https://img.shields.io/npm/v/reactjs-floating-label-inputs.svg)](https://www.npmjs.com/package/reactjs-floating-label-inputs) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-## Is updating ...
-
 ## Install
 
 ```bash
@@ -17,6 +15,11 @@ npm install --save reactjs-floating-label-inputs
 Visit this link:
 [https://simacoders.ir/features/#ReactJsFloatingLabelInputs](https://simacoders.ir/features/#ReactJsFloatingLabelInputs)
 
+## What is new?
+In new version, functionality of **rtl** is added. If you set `dir='rtl'` for `body` element or for component container `div`, direction of all component inside it will be changed.
+Also, following properties are added:
+1. `labelType` for switching label type between normal type and mui type.
+2. `minHeight` as minimum height of component (should be greater than 35). 
 
 ## Usage
 
@@ -50,6 +53,16 @@ import 'reactjs-floating-label-inputs/dist/index.css'
       <td>disabled</td>
       <td>boolean</td>
       <td>Disable component</td>
+    </tr>
+    <tr>
+      <td>labelType</td>
+      <td>string/number</td>
+      <td>Switch label type between normal type and mui type</td>
+    </tr>
+    <tr>
+      <td>minHeight</td>
+      <td>number</td>
+      <td>minimum height of component (should be greater than 35)</td>
     </tr>
     <tr>
       <td>onChangeValue</td>

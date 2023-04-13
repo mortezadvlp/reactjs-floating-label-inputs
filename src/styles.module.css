@@ -189,6 +189,10 @@
 .me1 {
   margin-right:.25rem!important
 }
+.mx1 {
+  margin-left:.25rem!important;
+  margin-right:.25rem!important;
+}
 .positionAbsolute {
   position:absolute!important;
 }
@@ -364,14 +368,28 @@
 
 .borderLabel>label {
   left: 0;
+  right: unset;
   margin-left: 0.2rem;
   padding: 0.2rem 0.4rem;
   display: inline-block;
 }
-
 .borderLabel.border2>label {
   padding-top: 1px;
+  right: unset;
   left: -1px;
+}
+
+[dir="rtl"] .borderLabel>label {
+  left: unset;
+  right: 0;
+  margin-right: 0.2rem;
+  padding: 0.2rem 0.4rem;
+  display: inline-block;
+}
+[dir="rtl"] .borderLabel.border2>label {
+  padding-top: 1px;
+  left: unset;
+  right: -1px;
 }
 
 /*** Input Label **********************/
@@ -383,21 +401,21 @@
   animation: input-label-focus-anim 0.2s linear;
   animation-fill-mode:forwards;
 }
+[dir="rtl"] .inputLabelFocus:not(.type2) {
+  animation: input-label-focus-anim-rtl 0.2s linear;
+  animation-fill-mode:forwards;
+}
 @keyframes input-label-focus-anim {
   from {
       top: 50%;
       margin-left: 0.2rem;
       padding-left: 0.4rem;
-      /*margin-top: 1.7rem;
-      padding-top: 0.25rem;*/
       font-size: 100%;
   }
   to {
       top: -15px;
       margin-left: 0;
       padding-left: 0;
-      /*margin-top: 0rem;
-      padding-top: 0;*/
       font-size: 80%;
   }
 }
@@ -411,6 +429,20 @@
       font-size: 80%;
   }
 }
+@keyframes input-label-focus-anim-rtl {
+  from {
+      top: 50%;
+      margin-right: 0.2rem;
+      padding-right: 0.4rem;
+      font-size: 100%;
+  }
+  to {
+      top: -15px;
+      margin-right: 0;
+      padding-right: 0;
+      font-size: 80%;
+  }
+}
 
 .inputLabelBlur.type2 {
   animation: input-label-blur-anim2 0.2s linear !important;
@@ -420,21 +452,21 @@
   animation: input-label-blur-anim 0.2s linear;
   animation-fill-mode:forwards;
 }
+[dir="rtl"] .inputLabelBlur:not(.type2) {
+  animation: input-label-blur-anim-rtl 0.2s linear;
+  animation-fill-mode:forwards;
+}
 @keyframes input-label-blur-anim {
   from {
       top: -15px;
       margin-left: 0;
       padding-left: 0;
-      /*margin-top: 0rem;
-      padding-top: 0;*/
       font-size: 80%;
   }
   to {
       top: 50%;
       margin-left: 0.2rem;
       padding-left: 0.4rem;
-      /*margin-top: 1.7rem;
-      padding-top: 0.25rem;*/
       font-size: 100%;
   }
 }
@@ -448,6 +480,20 @@
       font-size: 100%;
   }
 }
+@keyframes input-label-blur-anim-rtl {
+  from {
+      top: -15px;
+      margin-right: 0;
+      padding-right: 0;
+      font-size: 80%;
+  }
+  to {
+      top: 50%;
+      margin-right: 0.2rem;
+      padding-right: 0.4rem;
+      font-size: 100%;
+  }
+}
 
 /*** Plain Label **********************/
 .plainLabelFocus.type2 {
@@ -456,6 +502,10 @@
 }
 .plainLabelFocus:not(.type2) {
   animation: plain-label-focus-anim 0.2s linear;
+  animation-fill-mode:forwards;
+}
+[dir="rtl"] .plainLabelFocus:not(.type2) {
+  animation: plain-label-focus-anim-rtl 0.2s linear;
   animation-fill-mode:forwards;
 }
 @keyframes plain-label-focus-anim {
@@ -469,6 +519,20 @@
       top: -15px;
       margin-left: 0;
       padding-left: 0;
+      font-size: 80%;
+  }
+}
+@keyframes plain-label-focus-anim-rtl {
+  from {
+      top: 17px;
+      margin-right: 0.2rem;
+      padding-right: 0.4rem;
+      font-size: 100%;
+  }
+  to {
+      top: -15px;
+      margin-right: 0;
+      padding-right: 0;
       font-size: 80%;
   }
 }
@@ -491,6 +555,10 @@
   animation: plain-label-blur-anim 0.2s linear;
   animation-fill-mode:forwards;
 }
+[dir="rtl"] .plainLabelBlur:not(.type2) {
+  animation: plain-label-blur-anim-rtl 0.2s linear;
+  animation-fill-mode:forwards;
+}
 @keyframes plain-label-blur-anim {
   from {
       top: -15px;
@@ -502,6 +570,20 @@
       top: 17px;
       margin-left: 0.2rem;
       padding-left: 0.4rem;
+      font-size: 100%;
+  }
+}
+@keyframes plain-label-blur-anim-rtl {
+  from {
+      top: -15px;
+      margin-right: 0;
+      padding-right: 0;
+      font-size: 80%;
+  }
+  to {
+      top: 17px;
+      margin-right: 0.2rem;
+      padding-right: 0.4rem;
       font-size: 100%;
   }
 }
@@ -537,8 +619,16 @@
   animation: select-label-phone-focus-anim2 0.25s linear;
   animation-fill-mode:forwards;
 }
+[dir="rtl"] .selectLabelPhoneFocus.type2 {
+  animation: select-label-phone-focus-anim2-rtl 0.25s linear;
+  animation-fill-mode:forwards;
+}
 .selectLabelPhoneFocus:not(.type2) {
   animation: select-label-phone-focus-anim 0.25s linear;
+  animation-fill-mode:forwards;
+}
+[dir="rtl"] .selectLabelPhoneFocus:not(.type2) {
+  animation: select-label-phone-focus-anim-rtl 0.25s linear;
   animation-fill-mode:forwards;
 }
 @keyframes select-label-phone-focus-anim {
@@ -546,18 +636,12 @@
     top: 50%;
     margin-left: 75px;
     padding-left: 0.4rem;
-    /*margin-top: 1.5rem;
-    padding-top: 0.25rem;
-    margin-left: 85px;*/
     font-size: 100%;
   }
   to {
     top: -15px;
     margin-left: 0;
     padding-left: 0;
-    /*margin-top: 0;
-    padding-top: 0;
-    margin-left: 0.25rem;*/
     font-size: 80%;
   }
 }
@@ -565,13 +649,37 @@
   from {
       top: 50%;
       margin-left: 75px;
-      /*padding-left: 0.4rem;*/
       font-size: 100%;
   }
   to {
       top: -5%;
       margin-left: 0.25rem;
-      /*padding-left: 0;*/
+      font-size: 80%;
+  }
+}
+@keyframes select-label-phone-focus-anim-rtl {
+  from {
+    top: 50%;
+    margin-right: 75px;
+    padding-right: 0.4rem;
+    font-size: 100%;
+  }
+  to {
+    top: -15px;
+    margin-right: 0;
+    padding-right: 0;
+    font-size: 80%;
+  }
+}
+@keyframes select-label-phone-focus-anim2-rtl {
+  from {
+      top: 50%;
+      margin-right: 75px;
+      font-size: 100%;
+  }
+  to {
+      top: -5%;
+      margin-right: 0.25rem;
       font-size: 80%;
   }
 }
@@ -580,8 +688,16 @@
   animation: select-label-phone-blur-anim 0.25s linear;
   animation-fill-mode:forwards;
 }
+[dir="rtl"] .selectLabelPhoneBlur:not(.type2) {
+  animation: select-label-phone-blur-anim-rtl 0.25s linear;
+  animation-fill-mode:forwards;
+}
 .selectLabelPhoneBlur.type2 {
   animation: select-label-phone-blur-anim2 0.25s linear;
+  animation-fill-mode:forwards;
+}
+[dir="rtl"] .selectLabelPhoneBlur.type2 {
+  animation: select-label-phone-blur-anim2-rtl 0.25s linear;
   animation-fill-mode:forwards;
 }
 @keyframes select-label-phone-blur-anim {
@@ -602,13 +718,37 @@
   from {
     top: -5%;
     margin-left: 0.25rem;
-    /*padding-left: 0;*/
     font-size: 80%;
   }
   to {
     top: 50%;
     margin-left: 75px;
-    /*padding-left: 0.4rem;*/
+    font-size: 100%;
+  }
+}
+@keyframes select-label-phone-blur-anim-rtl {
+  from {
+    top: -15px;
+    margin-right: 0;
+    padding-right: 0;
+    font-size: 80%;
+  }
+  to {
+    top: 50%;
+    margin-right: 75px;
+    padding-right: 0.4rem;
+    font-size: 100%;
+  }
+}
+@keyframes select-label-phone-blur-anim2-rtl {
+  from {
+    top: -5%;
+    margin-right: 0.25rem;
+    font-size: 80%;
+  }
+  to {
+    top: 50%;
+    margin-right: 75px;
     font-size: 100%;
   }
 }
@@ -616,6 +756,10 @@
 /*** Select Label **********************/
 .selectLabelFocus:not(.type2) {
   animation: select-label-focus-anim 0.2s linear;
+  animation-fill-mode:forwards;
+}
+[dir="rtl"] .selectLabelFocus:not(.type2) {
+  animation: select-label-focus-anim-rtl 0.2s linear;
   animation-fill-mode:forwards;
 }
 .selectLabelFocus.type2 {
@@ -636,6 +780,20 @@
     font-size: 80%;
   }
 }
+@keyframes select-label-focus-anim-rtl {
+  from {
+    top: 50%;
+    margin-right: 0.2rem;
+    padding-right: 0.4rem;
+    font-size: 100%;
+  }
+  to {
+    top: -15px;
+    margin-right: 0;
+    padding-right: 0;
+    font-size: 80%;
+  }
+}
 @keyframes select-label-focus-anim2 {
   from {
     top: 50%;
@@ -651,6 +809,10 @@
   animation: select-label-blur-anim 0.2s linear;
   animation-fill-mode:forwards;
 }
+[dir="rtl"] .selectLabelBlur:not(.type2) {
+  animation: select-label-blur-anim-rtl 0.2s linear;
+  animation-fill-mode:forwards;
+}
 .selectLabelBlur.type2 {
   animation: select-label-blur-anim2 0.2s linear;
   animation-fill-mode:forwards;
@@ -660,16 +822,26 @@
     top: -15px;
     margin-left: 0;
     padding-left: 0;
-    /*margin-top: 0rem;
-    padding-top: 0;*/
     font-size: 80%;
   }
   to {
     top: 50%;
     margin-left: 0.2rem;
     padding-left: 0.4rem;
-    /*margin-top: 1.7rem;
-    padding-top: 0.25rem;*/
+    font-size: 100%;
+  }
+}
+@keyframes select-label-blur-anim-rtl {
+  from {
+    top: -15px;
+    margin-right: 0;
+    padding-right: 0;
+    font-size: 80%;
+  }
+  to {
+    top: 50%;
+    margin-right: 0.2rem;
+    padding-right: 0.4rem;
     font-size: 100%;
   }
 }

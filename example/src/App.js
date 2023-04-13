@@ -11,7 +11,8 @@ import 'reactjs-floating-label-inputs/dist/index.css'
 
 const App = () => {
   const [minHeight, setMinHeight] = useState(40)
-  const [labelType, setLabelType] = useState(false)
+  const [rtl, setRtl] = useState(false)
+  const [labelType, setLabelType] = useState(true)
   const [disableAll, setDisableAll] = useState(false)
   const [simpleData, setSimpleData] = useState('')
   const [simpleDataInt, setSimpleDataInt] = useState('')
@@ -35,12 +36,15 @@ const App = () => {
   const [checkData, setCheckData] = useState(false)
 
   return (
-    <section style={{maxWidth: '400px', display: 'flex', flexDirection: 'column',  marginLeft: 'auto', marginRight: 'auto', alignItems: 'stretch', padding: '1rem'}}>
-      <div style={{maxWidth: '100%', display: 'flex', flexDirection: 'column', alignItems: 'stretch', padding: '1rem', border: '1px solid blue'}} >
-        <span style={{marginLeft: 'auto', marginRight: 'auto'}} >Settings</span>
+    <section dir={rtl ? 'rtl' : 'ltr'} style={{maxWidth: '400px', display: 'flex', flexDirection: 'column',  marginLeft: 'auto', marginRight: 'auto', alignItems: 'stretch', padding: '1rem'}}>
+      <div style={{maxWidth: '100%', display: 'flex', flexDirection: 'column', alignItems: 'stretch', gap: '0.25rem', padding: '1rem', border: '1px solid blue'}} >
+        <span style={{marginLeft: 'auto', marginRight: 'auto', fontWeight: 'bold'}} >Settings</span>
         <QuestionInputFloatingLabel className='' title='Label Type Selection'
             trueOption='Type1' falseOption='Type2' minHeight={minHeight}
             value={labelType} onChangeValue={(val) => setLabelType(val)} />
+        <QuestionInputFloatingLabel className='' title='Layout Direction'
+            trueOption='RTL' falseOption='LTR' minHeight={minHeight}
+            value={rtl} onChangeValue={(val) => setRtl(val)} />
         <NormalInputFloatingLabel className='' label='Minimum Height' type='IntNumber' minHeight={minHeight}
             value={minHeight} onChangeValue={(val) => setMinHeight(val)} labelType={labelType ? '1' : '2'} />
         <CheckBoxInputFloatingLabel className = '' text='Disable All' minHeight={minHeight}
@@ -116,9 +120,6 @@ const App = () => {
 
       <CheckBoxInputFloatingLabel className = '' text='Check Box Input' disabled={disableAll} minHeight={minHeight}
           isChecked={checkData} onChangeChecked={(val) => setCheckData(val)} />
-          
-      <CheckBoxInputFloatingLabel className = '' text='Disable All' minHeight={minHeight}
-          isChecked={disableAll} onChangeChecked={(val) => setDisableAll(val)} />
     </section>
   );
 }

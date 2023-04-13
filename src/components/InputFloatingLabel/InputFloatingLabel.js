@@ -46,8 +46,6 @@ export default function InputFloatingLabel({
         onChangeValue(val);
     }
 
-    const tt = true;
-
     return (
         <div className={`${className}`} >
             <div className={`${styles.borderTransparent}`} >
@@ -63,7 +61,7 @@ export default function InputFloatingLabel({
                         className={`${styles.input} ${styles.bgTransparent} ${styles.noOutline} ${styles.border0} ${styles.w100} ${styles.p2}`} disabled={disabled}
                         onFocus={() => onInputFocus(true)} onBlur={() => onInputFocus(false)} />
                     }
-                    <div className={`${iconClickable && !disabled ? styles.cursorPointing : ''} ${styles.m0} ${styles.p0} ${icon ? styles.me1 : ''} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsCenter}`} onClick={iconClickable && !disabled ? onIconClick : () => {}}>
+                    <div className={`${iconClickable && !disabled ? styles.cursorPointing : ''} ${styles.m0} ${styles.p0} ${icon ? styles.mx1 : ''} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsCenter}`} onClick={iconClickable && !disabled ? onIconClick : () => {}}>
                         {icon}
                     </div>
                     {Number(lineCount) <= 1
