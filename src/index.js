@@ -24,10 +24,10 @@ export const NormalInputFloatingLabel = ({label = 'Title', className = '', lineC
   )
 }
 
-export const DateInputFloatingLabel = ({label = 'Title', className = '', disabled = false, persianMode = false, minHeight = inputComponentHeightPx,
+export const DateInputFloatingLabel = ({label = 'Title', className = '', disabled = false, shamsiMode = false, persianLanguage = false, minHeight = inputComponentHeightPx,
                 value = '', onChangeValue, onFocus = ()=>{}, onBlur = ()=>{}, hasIcon = false, icon = null, labelType = 1}) => {
   return (
-    <DateFloatingLabel label={label} className={className} disabled={disabled} persianMode={persianMode} labelType={labelType} minHeight={minHeight}
+    <DateFloatingLabel label={label} className={className} disabled={disabled} shamsiMode={shamsiMode} persianLanguage={persianLanguage} labelType={labelType} minHeight={minHeight}
       value={value} onChangeValue={onChangeValue} onFocus={onFocus} onBlur={onBlur} hasIcon={hasIcon} icon={icon} />
   )
 }

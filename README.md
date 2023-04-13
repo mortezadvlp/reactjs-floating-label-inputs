@@ -19,7 +19,9 @@ Visit this link:
 In new version, functionality of **rtl** is added. If you set `dir='rtl'` for `body` element or for component container `div`, direction of all component inside it will be changed.
 Also, following properties are added:
 1. `labelType` for switching label type between normal type and mui type.
-2. `minHeight` as minimum height of component (should be greater than 35). 
+2. `minHeight` as minimum height of component (should be greater than 35).
+3. `persianLanguage` to Date component to translate and convert texts to Persian (Only in `shamsiMode = {true}`).
+4. Rename `persianMode` to `shamsiMode` in Date component
 
 ## Usage
 
@@ -156,9 +158,14 @@ Additional properties:
       <td>Date in 'YYYY/MM/DD' format (Empty string means today)</td>
     </tr>
     <tr>
-      <td>persianMode</td>
+      <td>shamsiMode</td>
       <td>boolean</td>
-      <td>Switch between Gregorian and Persian modes</td>
+      <td>Switch between Gregorian and Shamsi modes</td>
+    </tr>
+    <tr>
+      <td>persianLanguage</td>
+      <td>boolean</td>
+      <td>If true, it translate and convert texts to Persian</td>
     </tr>
     <tr>
       <td>hasIcon</td>

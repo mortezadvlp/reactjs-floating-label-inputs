@@ -5,11 +5,12 @@ import { SvgCalendar, SvgClose } from '../constantComponents';
 import { inputComponentHeight, inputComponentHeightPx } from '../constants';
 import './DateFloatingLabel.css'
 import persian from "react-date-object/calendars/persian"
+import persian_fa from "react-date-object/locales/persian_fa"
 import persian_en from "react-date-object/locales/persian_en"
 import gregorian_en from "react-date-object/locales/gregorian_en"
 import styles from '../../styles.module.css';
 
-export default function DateFloatingLabel({ label = 'Title', className = '', disabled = false, persianMode = false, minHeight = inputComponentHeightPx,
+export default function DateFloatingLabel({ label = 'Title', className = '', disabled = false, shamsiMode = false, persianLanguage = false, minHeight = inputComponentHeightPx,
     value = '', onChangeValue, onFocus = ()=>{}, onBlur = ()=>{}, hasIcon = false, icon = null, labelType = 1 }) {
 
     const [hasFocus, setHasFocus] = useState(false);
@@ -41,8 +42,8 @@ export default function DateFloatingLabel({ label = 'Title', className = '', dis
                         style={{minHeight: `${Math.max(minHeight, inputComponentHeightPx)}px`}}>
                     <DatePicker
                         ref={mainRef}
-                        calendar={persianMode ? persian : ''}
-                        locale={persianMode ? persian_en : gregorian_en}
+                        calendar={shamsiMode ? persian : ''}
+                        locale={shamsiMode ? (persianLanguage ? persian_fa : persian_en) : gregorian_en}
                         calendarPosition="bottom-center"
                         format='YYYY/MM/DD'
                         containerClassName={`${styles.w100} ${styles.hAuto} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsStretch}`}

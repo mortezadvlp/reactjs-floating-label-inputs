@@ -18,6 +18,7 @@ const App = () => {
   const [simpleDataInt, setSimpleDataInt] = useState('')
   const [simpleDataFloat, setSimpleDataFloat] = useState('')
   const [simpleDataIcon, setSimpleDataIcon] = useState('')
+  const [dateDataShamsi, setDateDataShamsi] = useState('')
   const [dateDataPersian, setDateDataPersian] = useState('')
   const [dateDataEnglish, setDateDataEnglish] = useState('')
   const [dateDataIcon, setDateDataIcon] = useState('')
@@ -65,10 +66,12 @@ const App = () => {
                   <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z"/>
               </svg>} />
 
-      <DateInputFloatingLabel className='' label='Date Input (Persian)' disabled={disableAll} persianMode={true} minHeight={minHeight}
+      <DateInputFloatingLabel className='' label='Date Input (Shamsi)' disabled={disableAll} shamsiMode={true} minHeight={minHeight}
+          value={dateDataShamsi} onChangeValue={(val) => setDateDataShamsi(val)} labelType={labelType ? '1' : '2'} />
+      <DateInputFloatingLabel className='' label='Date Input (Persian)' disabled={disableAll} shamsiMode={true} persianLanguage={true} minHeight={minHeight}
           value={dateDataPersian} onChangeValue={(val) => setDateDataPersian(val)} labelType={labelType ? '1' : '2'} />
       <DateInputFloatingLabel className='' label='Date Input (Gregorian)' disabled={disableAll} minHeight={minHeight}
-        value={dateDataEnglish} onChangeValue={(val) => setDateDataEnglish(val)} labelType={labelType ? '1' : '2'} />
+          value={dateDataEnglish} onChangeValue={(val) => setDateDataEnglish(val)} labelType={labelType ? '1' : '2'} />
       <DateInputFloatingLabel className='' label='Date Input (With icon)' disabled={disableAll} minHeight={minHeight}
           value={dateDataIcon} onChangeValue={(val) => setDateDataIcon(val)} hasIcon={true} labelType={labelType ? '1' : '2'} />
       <DateInputFloatingLabel className='' label='Date Input (Custom icon)' disabled={disableAll} minHeight={minHeight}
