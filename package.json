@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": "mortezadvlp/reactjs-floating-label-inputs",
   "homepage": "https://github.com/mortezadvlp/reactjs-floating-label-inputs#readme",
-  "main": "dist/index.js",
+  "main": "dist/index",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
   "engines": {
