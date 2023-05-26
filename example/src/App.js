@@ -32,6 +32,7 @@ const App = () => {
   const [multiLineData, setMultiLineData] = useState('')
   const [selectData, setSelectData] = useState('')
   const [phoneData, setPhoneData] = useState({mobileCountryCode: 'IR', mobileValue: ''})
+  const [phoneDataDC, setPhoneDataDC] = useState({mobileCountryCode: '+98', mobileValue: ''})
   const [phoneDataValidate, setPhoneDataValidate] = useState({mobileCountryCode: 'IR', mobileValue: ''})
   const [questionData, setQuestionData] = useState(false)
   const [checkData, setCheckData] = useState(false)
@@ -106,10 +107,14 @@ const App = () => {
           options={[{value: 0, label: 'Item1'}, {value: 1, label: 'Item2'}, {value: 2, label: 'Item3'},
                     {value: 3, label: 'Item4'}, {value: 4, label: 'Item5'}, {value: 5, label: 'Item6'}]} />
 
-      <PhoneInputFloatingLabel className='' label='Phone Input' disabled={disableAll} labelType={labelType ? '1' : '2'} minHeight={minHeight}
+      <PhoneInputFloatingLabel className='' label='Phone Input (Country value code)' disabled={disableAll} labelType={labelType ? '1' : '2'} minHeight={minHeight}
           countryValue={phoneData.mobileCountryCode} phoneValue={phoneData.mobileValue}
           onChangeCountryValue={(val) => setPhoneData({...phoneData, mobileCountryCode: val})}
           onChangePhoneValue={(val) => setPhoneData({...phoneData, mobileValue: val})} />
+      <PhoneInputFloatingLabel className='' label='Phone Input (Country dial code)' disabled={disableAll} labelType={labelType ? '1' : '2'} minHeight={minHeight} useDialCode={true}
+          countryValue={phoneDataDC.mobileCountryCode} phoneValue={phoneDataDC.mobileValue}
+          onChangeCountryValue={(val) => setPhoneDataDC({...phoneDataDC, mobileCountryCode: val})}
+          onChangePhoneValue={(val) => setPhoneDataDC({...phoneData, mobileValue: val})} />
       <PhoneInputFloatingLabel className='' label='Phone Input (Validate)' disabled={disableAll} labelType={labelType ? '1' : '2'} minHeight={minHeight}
           countryValue={phoneDataValidate.mobileCountryCode} phoneValue={phoneDataValidate.mobileValue}
           onChangeCountryValue={(val) => setPhoneDataValidate({...phoneDataValidate, mobileCountryCode: val})}

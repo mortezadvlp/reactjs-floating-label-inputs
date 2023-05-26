@@ -9,7 +9,7 @@ import styles from '../../styles.module.css';
 //import "react-phone-number-input/style.css";
 
 export default function PhoneFloatingLabel({
-        label = 'Title', className = '', disabled = false,
+        label = 'Title', className = '', disabled = false, useDialCode = false,
         countryValue = defaultCountryCode, phoneValue = '', onChangeCountryValue = ()=>{}, onChangePhoneValue = ()=>{}, minHeight = inputComponentHeightPx,
         onFocus = ()=>{}, onBlur = ()=>{}, onValidate = ()=>{}, labelType = 1 }) {
 
@@ -45,7 +45,7 @@ export default function PhoneFloatingLabel({
             <div className={`${styles.borderTransparent}`} >
                 <div className={`${styles.inputWrapper} ${styles.w100} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsStretch} ${labelType == 1 ? styles.mt4 : styles.mt2}`}
                         style={{minHeight: `${Math.max(minHeight, inputComponentHeightPx)}px`}}>
-                    <CustomSelect countryValue={countryValue} phoneValue={phoneValue} disabled={disabled}
+                    <CustomSelect countryValue={countryValue} phoneValue={phoneValue} disabled={disabled} useDialCode={useDialCode}
                         setCountryValue={onChangeCountryValue} setPhoneValue={onChangePhoneValue}
                         forceFocus={forceInputFocus} minHeight={Math.max(minHeight, inputComponentHeightPx)}
                         onFocus={() => disabled ? {} : onInputFocus(true)} onBlur={() => onInputFocus(false)} />

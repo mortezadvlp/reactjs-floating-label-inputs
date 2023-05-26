@@ -1,12 +1,13 @@
 {
   "name": "reactjs-floating-label-inputs",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "ReactJs Component: Inputs with floating labels",
   "author": "mortezadvlp",
   "license": "MIT",
   "repository": "mortezadvlp/reactjs-floating-label-inputs",
   "homepage": "https://github.com/mortezadvlp/reactjs-floating-label-inputs#readme",
-  "main": "dist/index",
+  "main": "dist/index.js",
+  "typings": "src/typings/reactjs-floating-label-inputs.d.ts",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
   "engines": {

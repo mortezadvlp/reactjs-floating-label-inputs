@@ -16,18 +16,13 @@ Visit this link:
 [https://simacoders.ir/features/#ReactJsFloatingLabelInputs](https://simacoders.ir/features/#ReactJsFloatingLabelInputs)
 
 ## What is new?
-In new version, functionality of **rtl** is added. If you set `dir='rtl'` for `body` element or for component container `div`, direction of all component inside it will be changed.
-Also, following properties are added:
-1. `labelType` for switching label type between normal type and mui type.
-2. `minHeight` as minimum height of component (should be greater than 35).
-3. `persianLanguage` to Date component to translate and convert texts to Persian (Only in `shamsiMode = {true}`).
-4. Rename `persianMode` to `shamsiMode` in Date component
+In new version, `useDialCode` property is added to `PhoneInputFloatingLabel`. If this property is `true`, PhoneInput works with country dial code (e.g. +98), otherwise it works with country value (e.g. IR).
 
 ## Usage
 
 ### Import
 ```jsx
-import MyComponent from 'reactjs-floating-label-inputs'
+import { MyComponent1, MyComponent2 } from 'reactjs-floating-label-inputs'
 import 'reactjs-floating-label-inputs/dist/index.css'
 ```
 
@@ -312,6 +307,11 @@ Additional properties:
       <td>phoneValue</td>
       <td>String</td>
       <td>Phone number value (Without country code)</td>
+    </tr>
+    <tr>
+      <td>useDialCode</td>
+      <td>boolean</td>
+      <td>If this property is `true`, PhoneInput works with country dial code (e.g. +98), otherwise it works with country value (e.g. IR)</td>
     </tr>
     <tr>
       <td>onChangeCountryValue</td>

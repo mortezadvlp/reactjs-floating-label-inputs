@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import Select, { createFilter } from 'react-select';
 import { defaultTheme } from 'react-select';
-import { countryCodes, defaultCountryCode, inputComponentHeight, inputComponentHeightPx } from '../constants';
+import { countryCodes, defaultCountryCode, defaultCountryDialCode, inputComponentHeight, inputComponentHeightPx } from '../constants';
 import styles from '../../styles.module.css';
 import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
 
@@ -10,7 +10,7 @@ const { colors } = defaultTheme;
 
 export default function CustomSelect ({
       countryValue = defaultCountryCode, phoneValue = '', setCountryValue = ()=>{}, setPhoneValue = ()=>{}, disabled = false, minHeight = inputComponentHeightPx,
-      forceFocus = false, onFocus, onBlur }) {
+      forceFocus = false, onFocus, onBlur, useDialCode = false }) {
 
   const [isOpen, setIsOpen] = useState(false);
   const [countryOption, setCountryOption] = useState('');
@@ -32,13 +32,25 @@ export default function CustomSelect ({
     }
 
     if(countryValue === '') {
-      let cc = countryCodes.find(c => c.code === defaultCountryCode);
+      let cc = '';
+      if(useDialCode) {
+        cc = countryCodes.find(c => c.dial_code === defaultCountryDialCode);
+      }
+      else {
+        cc = countryCodes.find(c => c.code === defaultCountryCode);
+      }
       setCountryOption(cc ? cc : '')
       return;
     }
-    let cc = countryCodes.find(c => c.code === countryValue);
+    let cc = '';
+    if(useDialCode) {
+      cc = countryCodes.find(c => c.dial_code === countryValue);
+    }
+    else {
+      cc = countryCodes.find(c => c.code === countryValue);
+    }
     setCountryOption(cc ? cc : '')
-  }, [countryValue])
+  }, [countryValue, useDialCode])
 
   const phoneValueHandler = (val) => {
     const regex = /^[1-9]{1}[0-9]{0,9}$/;
@@ -92,7 +104,7 @@ export default function CustomSelect ({
             isClearable={false}
             menuIsOpen
             onChange={(newValue) => {
-              setCountryValue(newValue.code);
+              setCountryValue(useDialCode ? newValue.dial_code : newValue.code);
               setIsOpen(false);
             }}
             onBlur={() => setIsOpen(false)}

@@ -56,11 +56,11 @@ export const SelectInputFloatingLabel = ({label = 'Title', className = '', optio
   )
 }
 
-export const PhoneInputFloatingLabel = ({label = 'Title', className = '', disabled = false,
+export const PhoneInputFloatingLabel = ({label = 'Title', className = '', disabled = false, useDialCode = false,
                 countryValue = defaultCountryCode, phoneValue = '', onChangeCountryValue = ()=>{}, onChangePhoneValue = ()=>{},
                 onFocus = ()=>{}, onBlur = ()=>{}, onValidate = ()=>{}, labelType = 1, minHeight = inputComponentHeightPx}) => {
   return (
-    <PhoneFloatingLabel label={label} className={className} disabled={disabled} labelType={labelType} minHeight={minHeight}
+    <PhoneFloatingLabel label={label} className={className} disabled={disabled} labelType={labelType} minHeight={minHeight} useDialCode={useDialCode}
         countryValue={countryValue} phoneValue={phoneValue} onChangeCountryValue={onChangeCountryValue} onChangePhoneValue={onChangePhoneValue}
         onFocus={onFocus} onBlur={onBlur} onValidate={onValidate} />
   )
