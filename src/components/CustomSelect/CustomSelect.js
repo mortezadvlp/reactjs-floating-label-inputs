@@ -98,7 +98,7 @@ export default function CustomSelect ({
               {countryOption ? countryOption.label2 : 'Choose'}
             </button>
             <input ref={inputRef} type="number" value={phoneValue} onChange={(e) => phoneValueHandler(e.target.value)} disabled={disabled}
-              className={`${styles.bgTransparent} ${styles.noOutline} ${styles.border0} ${styles.w100} ${styles.p1} ${styles.py2} ${styles.inputNumberNoArrows} ${styles.roundedEnd} ${dark ? styles.dark : ''}`}
+              className={`${styles.bgInput} ${styles.bgTransparent} ${styles.noOutline} ${styles.border0} ${styles.w100} ${styles.p1} ${styles.py2} ${styles.inputNumberNoArrows} ${styles.roundedEnd} ${styles.textDark} ${dark ? styles.dark : ''}`}
               onFocus={() => onFocus()} onBlur={() => onBlur()} />
           </div>
         }
