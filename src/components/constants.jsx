@@ -247,3 +247,46 @@ export const DegreeList = [
     {value: "PhD", label: "Doctor of Philosophy"},
     {value: "PostDoc", label: "Postdoctoral"},
 ]
+
+export function lightOrDark(color) {
+    // Check the format of the color, HEX or RGB?
+    var r, g, b, hsp, cl;
+    if (color.match(/^rgb/)) {
+
+        // If HEX --> store the red, green, blue values in separate variables
+        cl = color.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/);
+
+        r = cl[1];
+        g = cl[2];
+        b = cl[3];
+    } 
+    else {
+
+        // If RGB --> Convert it to HEX: http://gist.github.com/983661
+        cl = +("0x" + color.slice(1).replace( 
+            cl.length < 5 && /./g, '$&$&'
+        )
+                );
+
+        r = cl >> 16;
+        g = cl >> 8 & 255;
+        b = cl & 255;
+    }
+
+    // HSP (Highly Sensitive Poo) equation from http://alienryderflex.com/hsp.html
+    hsp = Math.sqrt(
+        0.299 * (r * r) +
+        0.587 * (g * g) +
+        0.114 * (b * b)
+    );
+
+    // Using the HSP value, determine whether the color is light or dark
+    if (hsp>127.5) {
+
+        return 'light';
+    } 
+    else {
+
+        return 'dark';
+    }
+}

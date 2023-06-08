@@ -8,7 +8,7 @@ import { inputComponentHeightPx } from '../constants';
 
 export default function InputEmail(
     { className = '', label = 'Email Address', value = '', onChangeValue = () => {}, disabled = false, hasIcon = false, icon = null,  minHeight = inputComponentHeightPx,
-        onFocus = ()=>{}, onBlur = ()=>{}, onValidate = ()=>{}, labelType = 1 }) {
+        onFocus = ()=>{}, onBlur = ()=>{}, onValidate = ()=>{}, labelType = 1, dark = false }) {
 
     const onBlurHandler = () => {
         const validate = validateEmail(value);
@@ -18,7 +18,7 @@ export default function InputEmail(
 
     return (
         <InputFloatingLabel className={className} lineCount='1' label={label} type='email' disabled={disabled} minHeight={minHeight}
-            value={value} onChangeValue={(val) => onChangeValue(val)} labelType={labelType}
+            value={value} onChangeValue={(val) => onChangeValue(val)} labelType={labelType} dark={dark}
             icon={hasIcon ? (icon ? icon : <SvgEmailSign width="24px" height="24px" className={disabled ? styles.textDisable : `${styles.textPrimary} text-primary`} />) : null}
             onFocus={onFocus} onBlur={onBlurHandler} />
     );

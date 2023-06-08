@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import Select, { createFilter } from 'react-select';
 import { defaultTheme } from 'react-select';
-import { countryCodes, defaultCountryCode, defaultCountryDialCode, inputComponentHeight, inputComponentHeightPx } from '../constants';
+import { countryCodes, defaultCountryCode, defaultCountryDialCode, inputComponentHeight, inputComponentHeightPx, lightOrDark } from '../constants';
 import styles from '../../styles.module.css';
 import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
 
@@ -10,11 +10,14 @@ const { colors } = defaultTheme;
 
 export default function CustomSelect ({
       countryValue = defaultCountryCode, phoneValue = '', setCountryValue = ()=>{}, setPhoneValue = ()=>{}, disabled = false, minHeight = inputComponentHeightPx,
-      forceFocus = false, onFocus, onBlur, useDialCode = false }) {
+      forceFocus = false, onFocus, onBlur, useDialCode = false, dark = false }) {
 
   const [isOpen, setIsOpen] = useState(false);
   const [countryOption, setCountryOption] = useState('');
   const inputRef = useRef(null);
+  const [btnTextColor, setBtnTextColor] = useState('#333');
+  const refBtn = useRef(null);
+
 
 
   polyfillCountryFlagEmojis();
@@ -52,6 +55,19 @@ export default function CustomSelect ({
     setCountryOption(cc ? cc : '')
   }, [countryValue, useDialCode])
 
+  useEffect(() => {
+      var bgColor = window
+          .getComputedStyle(refBtn.current, null)
+          .getPropertyValue("background-color");
+      var dl = lightOrDark(bgColor);
+      if (dl === 'dark') {
+        setBtnTextColor('white');
+      }
+      else {
+        setBtnTextColor('#333');
+      }
+  }, [dark, disabled])
+
   const phoneValueHandler = (val) => {
     const regex = /^[1-9]{1}[0-9]{0,9}$/;
     if(val === '' || regex.test(val)) {
@@ -76,13 +92,13 @@ export default function CustomSelect ({
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         target={
-          <div className={`${styles.dFlex} ${styles.flexRow} ${styles.alignItemsStretch}`} style={{minHeight: `${minHeight}px`}} >
-            <button style={{width: '90px'}} onClick={() => disabled ? {} : setIsOpen((prev) => !prev)}
-              className={`${styles.noOutline} ${styles.border0} ${styles.borderEnd} ${styles.roundedStart}`}>
+          <div className={`${styles.dFlex} ${styles.flexRow} ${styles.alignItemsStretch} ${disabled ? '' : dark ? styles.dark : ''}`} style={{minHeight: `${minHeight}px`}} >
+            <button style={{width: '90px', color: btnTextColor}} onClick={() => disabled ? {} : setIsOpen((prev) => !prev)} ref={refBtn}
+              className={`${styles.noOutline} ${styles.border0} ${styles.roundedStart} ${styles.bgPhoneButton} ${dark ? styles.dark : ''}`}>
               {countryOption ? countryOption.label2 : 'Choose'}
             </button>
             <input ref={inputRef} type="number" value={phoneValue} onChange={(e) => phoneValueHandler(e.target.value)} disabled={disabled}
-              className={`${styles.bgTransparent} ${styles.noOutline} ${styles.border0} ${styles.w100} ${styles.p1} ${styles.py2} ${styles.inputNumberNoArrows} ${styles.roundedEnd}`}
+              className={`${styles.bgTransparent} ${styles.noOutline} ${styles.border0} ${styles.w100} ${styles.p1} ${styles.py2} ${styles.inputNumberNoArrows} ${styles.roundedEnd} ${dark ? styles.dark : ''}`}
               onFocus={() => onFocus()} onBlur={() => onBlur()} />
           </div>
         }
@@ -92,7 +108,13 @@ export default function CustomSelect ({
             styles={{
               menu: (baseStyles, state) => ({
                 ...baseStyles,
-                top: '90%'
+                top: '90%',
+                backgroundColor: dark ? 'black' : 'white',
+                boxShadow: '0px 0px 2px 2px #88888855'
+              }),
+              menuList: (baseStyles, state) => ({
+                  ...baseStyles,
+                  color: dark ? 'silver' : '#333',
               }),
             }}
             isDisabled={disabled}

@@ -11,7 +11,7 @@ import styles from '../../styles.module.css';
 export default function PhoneFloatingLabel({
         label = 'Title', className = '', disabled = false, useDialCode = false,
         countryValue = defaultCountryCode, phoneValue = '', onChangeCountryValue = ()=>{}, onChangePhoneValue = ()=>{}, minHeight = inputComponentHeightPx,
-        onFocus = ()=>{}, onBlur = ()=>{}, onValidate = ()=>{}, labelType = 1 }) {
+        onFocus = ()=>{}, onBlur = ()=>{}, onValidate = ()=>{}, labelType = 1, dark = false }) {
 
     const [gotFocus, setGotFocus] = useState(false);
     const [showTextHolder, setShowTextHolder] = useState(phoneValue === '');
@@ -46,29 +46,14 @@ export default function PhoneFloatingLabel({
                 <div className={`${styles.inputWrapper} ${styles.w100} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsStretch} ${labelType == 1 ? styles.mt4 : styles.mt2}`}
                         style={{minHeight: `${Math.max(minHeight, inputComponentHeightPx)}px`}}>
                     <CustomSelect countryValue={countryValue} phoneValue={phoneValue} disabled={disabled} useDialCode={useDialCode}
-                        setCountryValue={onChangeCountryValue} setPhoneValue={onChangePhoneValue}
+                        setCountryValue={onChangeCountryValue} setPhoneValue={onChangePhoneValue} dark={dark}
                         forceFocus={forceInputFocus} minHeight={Math.max(minHeight, inputComponentHeightPx)}
                         onFocus={() => disabled ? {} : onInputFocus(true)} onBlur={() => onInputFocus(false)} />
-                    <div className={`${styles.borderLabel} ${styles.border} ${styles.rounded1} ${showTextHolder ? '' : styles.border2} ${disabled ? `${styles.bgDisable} ${styles.borderDisable}` : `${styles.borderPrimary} border-primary`}`} >
-                        <label className={`${showTextHolder ? `${styles.selectLabelPhoneBlur} ${styles.textGray}` : `${styles.selectLabelPhoneFocus} ${styles.textPrimary} text-primary`} ${labelType == 1 ? '' : styles.type2}`} >{label}</label>
+                    <div className={`${styles.borderLabel} ${styles.border} ${styles.rounded1} ${showTextHolder ? '' : styles.border2} ${disabled ? `${styles.bgDisable} ${styles.borderDisable}` : `${styles.borderPrimary} border-primary`} ${dark ? styles.dark : ''}`} >
+                        <label className={`${showTextHolder ? `${styles.selectLabelPhoneBlur} ${styles.textGray}` : `${styles.selectLabelPhoneFocus} ${styles.textPrimary} text-primary`} ${labelType == 1 ? '' : styles.type2} ${dark ? styles.dark : ''}`} >{label}</label>
                     </div>
                 </div>
             </div>
-
-
-
-
-            {/*<div className={`${styles.positionRelative} ${styles.borderTransparent}`} >
-                <div className={`${styles.w100} ${styles.border} ${disabled ? `${styles.bgDisable} ${styles.borderDisable}` : `${styles.bgWhite} ${styles.borderPrimary} border-primary`} ${styles.rounded1} ${styles.mt4} ${styles.p0} ${showTextHolder || (!gotFocus && phoneValue !== '') ? '' : styles.border2}`}
-                    style={{minHeight: inputComponentHeight}} >
-                    <CustomSelect countryValue={countryValue} phoneValue={phoneValue} disabled={disabled}
-                        setCountryValue={onChangeCountryValue} setPhoneValue={onChangePhoneValue}
-                        forceFocus={forceInputFocus}
-                        onFocus={() => disabled ? {} : onInputFocus(true)} onBlur={() => onInputFocus(false)} />
-                </div>
-                <span className={`${styles.positionAbsolute} ${styles.start0} ${styles.top0} ${showTextHolder ? `${styles.selectLabelPhoneBlur} ${styles.textGray} ${styles.pt2}` : `${styles.selectLabelPhoneFocus} ${styles.textPrimary}`}`} 
-                    onClick={() => disabled ? {} : setForceInputFocus(true)} >{label}</span>
-    </div>*/}
         </div>
     )
 }

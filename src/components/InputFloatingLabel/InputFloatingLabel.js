@@ -8,7 +8,7 @@ import styles from '../../styles.module.css';
 
 export default function InputFloatingLabel({
         label = 'Title', className = '', lineCount = '1', format = '', disabled = false, icon = null, typingValidator = '', minHeight = inputComponentHeightPx,
-        type = 'text', value = '', onChangeValue, iconClickable = false, onIconClick, onFocus = ()=>{}, onBlur = ()=>{}, labelType = 1 }) {
+        type = 'text', value = '', onChangeValue, iconClickable = false, onIconClick, onFocus = ()=>{}, onBlur = ()=>{}, labelType = 1, dark = false }) {
 
     const realType = (type === 'IntNumber' || type === 'FloatNumber') ? 'text' : type;
     const [hasFocus, setHasFocus] = useState(false);
@@ -54,11 +54,11 @@ export default function InputFloatingLabel({
                     {Number(lineCount) <= 1
                     ?
                     <input ref={mainRef} type={realType} value={value} onChange={(e) => handleChangeValue(e.target.value)}
-                        className={`${styles.input} ${styles.bgTransparent} ${styles.noOutline} ${styles.border0} ${styles.w100} ${styles.p1} ${styles.px2}`} disabled={disabled}
+                        className={`${styles.bgInput} ${styles.bgTransparent} ${styles.noOutline} ${styles.border0} ${styles.w100} ${styles.p1} ${styles.px2} ${styles.textDark} ${dark ? styles.dark : ''}`} disabled={disabled}
                         onFocus={() => onInputFocus(true)} onBlur={() => onInputFocus(false)} />
                     :
                     <textarea ref={mainRef} rows={String(lineCount)} value={value} onChange={(e) => onChangeValue(e.target.value)}
-                        className={`${styles.input} ${styles.bgTransparent} ${styles.noOutline} ${styles.border0} ${styles.w100} ${styles.p2}`} disabled={disabled}
+                        className={`${styles.bgInput} ${styles.bgTransparent} ${styles.noOutline} ${styles.border0} ${styles.w100} ${styles.p2} ${styles.textDark} ${dark ? styles.dark : ''}`} disabled={disabled}
                         onFocus={() => onInputFocus(true)} onBlur={() => onInputFocus(false)} />
                     }
                     <div className={`${iconClickable && !disabled ? styles.cursorPointing : ''} ${styles.m0} ${styles.p0} ${icon ? styles.mx1 : ''} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsCenter}`} onClick={iconClickable && !disabled ? onIconClick : () => {}}>
@@ -66,12 +66,12 @@ export default function InputFloatingLabel({
                     </div>
                     {Number(lineCount) <= 1
                     ?
-                    <div className={`${styles.borderLabel} ${styles.border} ${styles.rounded1} ${showTextHolder || (!hasFocus && value !== '') ? '' : styles.border2} ${disabled ? `${styles.bgDisable} ${styles.borderDisable}` : `${styles.borderPrimary} border-primary`}`} >
-                        <label className={`${showTextHolder ? `${styles.inputLabelBlur} ${styles.textGray}` : `${styles.inputLabelFocus} ${styles.textPrimary} text-primary`} ${labelType == 1 ? '' : styles.type2}`} >{`${label}${showTextHolder && format !== '' ? ` (${format})` : ''}`}</label>
+                    <div className={`${styles.border} ${styles.rounded1} ${showTextHolder || (!hasFocus && value !== '') ? '' : styles.border2} ${disabled ? `${styles.bgDisable} ${styles.borderDisable}` : `${styles.borderPrimary} border-primary`} ${styles.borderLabel} ${dark ? styles.dark : ''}`} >
+                        <label className={`${showTextHolder ? `${styles.inputLabelBlur} ${styles.textGray}` : `${styles.inputLabelFocus} ${styles.textPrimary} text-primary`} ${labelType == 1 ? '' : styles.type2} ${dark ? styles.dark : ''}`} >{`${label}${showTextHolder && format !== '' ? ` (${format})` : ''}`}</label>
                     </div>
                     :
-                    <div className={`${styles.borderLabel} ${styles.border} ${styles.rounded1} ${showTextHolder || (!hasFocus && value !== '') ? '' : styles.border2} ${disabled ? `${styles.bgDisable} ${styles.borderDisable}` : `${styles.borderPrimary} border-primary`}`} >
-                        <label className={`${showTextHolder ? `${styles.plainLabelBlur} ${styles.textGray}` : `${styles.plainLabelFocus} ${styles.textPrimary} text-primary`} ${labelType == 1 ? '' : styles.type2}`} >{`${label}${showTextHolder && format !== '' ? ` (${format})` : ''}`}</label>
+                    <div className={`${styles.border} ${styles.rounded1} ${showTextHolder || (!hasFocus && value !== '') ? '' : styles.border2} ${disabled ? `${styles.bgDisable} ${styles.borderDisable}` : `${styles.borderPrimary} border-primary`} ${styles.borderLabel} ${dark ? styles.dark : ''}`} >
+                        <label className={`${showTextHolder ? `${styles.plainLabelBlur} ${styles.textGray}` : `${styles.plainLabelFocus} ${styles.textPrimary} text-primary`} ${labelType == 1 ? '' : styles.type2} ${dark ? styles.dark : ''}`} >{`${label}${showTextHolder && format !== '' ? ` (${format})` : ''}`}</label>
                     </div>
                     }
                 </div>

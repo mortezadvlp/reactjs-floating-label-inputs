@@ -103,9 +103,13 @@
   --rjfli-text-opacity:1;
   color:rgba(var(--rjfli-primary-rgb),var(--rjfli-text-opacity))!important;
 }
-.textDark {
+.textDark:not(.dark) {
   --rjfli-text-opacity:1;
   color:rgba(var(--rjfli-dark-rgb),var(--rjfli-text-opacity))!important;
+}
+.textDark.dark {
+  --rjfli-text-opacity:1;
+  color:rgba(var(--rjfli-white-rgb),var(--rjfli-text-opacity))!important;
 }
 .myAuto {
   margin-top:auto!important;
@@ -205,7 +209,11 @@
 .ms1 {
   margin-left:.25rem!important;
 }
-.borderPrimary {
+.borderPrimary:not(.dark) {
+  --rjfli-border-opacity:1;
+  border-color:rgba(var(--rjfli-primary-rgb),var(--rjfli-border-opacity))!important;
+}
+.borderPrimary.dark {
   --rjfli-border-opacity:1;
   border-color:rgba(var(--rjfli-primary-rgb),var(--rjfli-border-opacity))!important;
 }
@@ -271,6 +279,12 @@
 .bgButtonDisable {
   background-color: rgb(169, 169, 169);
 }
+.bgPhoneButton:not(.dark) {
+  background-color: #eee !important;
+}
+.bgPhoneButton.dark {
+  background-color: #333 !important;
+}
 
 .inputNumberNoArrows::-webkit-outer-spin-button,
 .inputNumberNoArrows::-webkit-inner-spin-button {
@@ -306,8 +320,11 @@
   border: 1px solid transparent !important;
 }
 
-.textGray {
+.textGray:not(.dark) {
   color: gray;
+}
+.textGray.dark {
+  color: rgb(206, 206, 206);
 }
 
 .zTop {
@@ -343,20 +360,38 @@
 
 /*-----------------------------------------------*/
 
-.borderLabel {
+.borderLabel:not(.dark) {
   mix-blend-mode: multiply;
   position: absolute;
   background-color: white;
 }
-.borderLabel>label {
+.borderLabel.dark {
+  mix-blend-mode: screen;
+  position: absolute;
+  background-color: black !important;
+}
+.borderLabel:not(.dark)>label {
   position: absolute;
   top: 50%;
   background-color: white;
   transform: translateY(-50%);
 }
+.borderLabel.dark>label {
+  position: absolute;
+  top: 50%;
+  background-color: black !important;
+  transform: translateY(-50%);
+}
 
 .inputWrapper {
   position: relative;
+}
+
+.bgInput:not(.dark) {
+  background-color: transparent;
+}
+.bgInput.dark {
+  background-color: white;
 }
 
 .borderLabel {
@@ -604,9 +639,13 @@
   border-radius: 0.5rem;
   
 }
-.optionButtonWhite:hover {
+/*.optionButtonWhite:hover {
   background-color: rgb(214, 235, 255) !important;
 }
+.optionButtonWhite.dark:hover {
+  --rjfli-text-opacity:1;
+  color:rgba(var(--rjfli-dark-rgb),var(--rjfli-text-opacity))!important;
+}*/
 
 :global .flag-emoji {
     font-family: "Twemoji Country Flags"; /*TwemojiMozilla;*/

@@ -11,7 +11,7 @@ import gregorian_en from "react-date-object/locales/gregorian_en"
 import styles from '../../styles.module.css';
 
 export default function DateFloatingLabel({ label = 'Title', className = '', disabled = false, shamsiMode = false, persianLanguage = false, minHeight = inputComponentHeightPx,
-    value = '', onChangeValue, onFocus = ()=>{}, onBlur = ()=>{}, hasIcon = false, icon = null, labelType = 1 }) {
+    value = '', onChangeValue, onFocus = ()=>{}, onBlur = ()=>{}, hasIcon = false, icon = null, labelType = 1, dark = false }) {
 
     const [hasFocus, setHasFocus] = useState(false);
     const [showTextHolder, setShowTextHolder] = useState(value === '' && !hasFocus);
@@ -47,7 +47,7 @@ export default function DateFloatingLabel({ label = 'Title', className = '', dis
                         calendarPosition="bottom-center"
                         format='YYYY/MM/DD'
                         containerClassName={`${styles.w100} ${styles.hAuto} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsStretch}`}
-                        inputClass={`${styles.bgTransparent} ${styles.noOutline} ${styles.border0} ${styles.w100} ${styles.p1}`}
+                        inputClass={`${styles.bgTransparent} ${styles.noOutline} ${styles.border0} ${styles.w100} ${styles.p1} ${styles.px2} ${styles.textDark} ${dark ? styles.dark : ''}`}
                         value={value}
                         onChange={(e) => onChangeValue(e ? e.toString() : '')}
                         onOpen={() => onInputFocus(true)}
@@ -71,8 +71,8 @@ export default function DateFloatingLabel({ label = 'Title', className = '', dis
                             
                         </div>
                     }
-                    <div className={`${styles.borderLabel} ${styles.border} ${styles.rounded1} ${showTextHolder || (!hasFocus && value !== '') ? '' : styles.border2} ${disabled ? `${styles.bgDisable} ${styles.borderDisable}` : `${styles.borderPrimary} border-primary`}`} >
-                        <label className={`${showTextHolder ? `${styles.inputLabelBlur} ${styles.textGray}` : `${styles.inputLabelFocus} ${styles.textPrimary} text-primary`} ${labelType == 1 ? '' : styles.type2}`} >{`${label}${showTextHolder && format !== '' ? ` (${format})` : ''}`}</label>
+                    <div className={`${styles.borderLabel} ${styles.border} ${styles.rounded1} ${showTextHolder || (!hasFocus && value !== '') ? '' : styles.border2} ${disabled ? `${styles.bgDisable} ${styles.borderDisable}` : `${styles.borderPrimary} border-primary`} ${dark ? styles.dark : ''}`} >
+                        <label className={`${showTextHolder ? `${styles.inputLabelBlur} ${styles.textGray}` : `${styles.inputLabelFocus} ${styles.textPrimary} text-primary`} ${labelType == 1 ? '' : styles.type2} ${dark ? styles.dark : ''}`} >{`${label}${showTextHolder && format !== '' ? ` (${format})` : ''}`}</label>
                     </div>
                 </div>
             </div>

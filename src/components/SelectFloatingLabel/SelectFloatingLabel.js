@@ -2,18 +2,17 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Select from 'react-select';
-import { disabledBgColor, disabledColor, inputComponentHeight, inputComponentHeightPx, primaryColor } from '../constants';
+import { disabledColor, inputComponentHeightPx, primaryColor } from '../constants';
 import './SelectFloatingLabel.css'
 import styles from '../../styles.module.css';
 
 export default function SelectFloatingLabel({
         label = 'Title', className = '', options = [], disabled = false, minHeight = inputComponentHeightPx,
-        value = '', onChangeValue, colorPrimary = primaryColor, labelType = 1 }) {
+        value = '', onChangeValue, colorPrimary = primaryColor, labelType = 1, dark = false }) {
 
     const [gotFocus, setGotFocus] = useState(false);
     const [showTextHolder, setShowTextHolder] = useState(value === '');
     const [objValue, setObjValue] = useState(null);
-
     const mainRef = useRef(null);
 
     useEffect(() => {
@@ -54,14 +53,19 @@ export default function SelectFloatingLabel({
                             input: (baseStyles, state) => ({
                                 ...baseStyles,
                                 borderColor: 'transparent',
-                                backgroundColor: 'transparent',
+                                color: dark ? 'white' : '#333',
                             }),
                             control: (baseStyles, state) => ({
                                 ...baseStyles,
                                 border: 'none',
                                 boxShadow: 'none',
-                                backgroundColor: disabled ? disabledBgColor : 'white',
+                                backgroundColor: 'transparent',
                                 minHeight: `${minHeight}px`,
+                                color: 'red',
+                            }),
+                            singleValue: (baseStyles, state) => ({
+                                ...baseStyles,
+                                color: dark ? 'white' : '#333',
                             }),
                             dropdownIndicator: (baseStyles, state) => ({
                                 ...baseStyles,
@@ -75,10 +79,19 @@ export default function SelectFloatingLabel({
                                 ...baseStyles,
                                 backgroundColor: disabled ? disabledColor : colorPrimary,
                             }),
+                            menu: (baseStyles, state) => ({
+                                ...baseStyles,
+                                backgroundColor: dark ? 'black' : 'white',
+                                boxShadow: '0px 0px 2px 2px #88888855'
+                            }),
+                            menuList: (baseStyles, state) => ({
+                                ...baseStyles,
+                                color: dark ? 'silver' : '#333',
+                            }),
                         }}
                         className={`${styles.bgTransparent} ${styles.w100} ${styles.p0}`} />
-                    <div className={`${styles.borderLabel} ${styles.border} ${styles.rounded1} ${showTextHolder ? '' : styles.border2} ${disabled ? `${styles.bgDisable} ${styles.borderDisable}` : `${styles.borderPrimary} border-primary`}`} >
-                        <label className={`${showTextHolder ? `${styles.selectLabelBlur} ${styles.textGray}` : `${styles.selectLabelFocus} ${styles.textPrimary} text-primary`} ${labelType == 1 ? '' : styles.type2}`} >{label}</label>
+                    <div className={`${styles.borderLabel} ${styles.border} ${styles.rounded1} ${showTextHolder ? '' : styles.border2} ${disabled ? `${styles.bgDisable} ${styles.borderDisable}` : `${styles.borderPrimary} border-primary`} ${dark ? styles.dark : ''}`} >
+                        <label className={`${showTextHolder ? `${styles.selectLabelBlur} ${styles.textGray}` : `${styles.selectLabelFocus} ${styles.textPrimary} text-primary`} ${labelType == 1 ? '' : styles.type2} ${dark ? styles.dark : ''}`} >{label}</label>
                     </div>
                 </div>
             </div>
