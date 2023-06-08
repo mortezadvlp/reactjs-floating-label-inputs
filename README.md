@@ -16,7 +16,7 @@ Visit this link:
 [https://simacoders.ir/features/#ReactJsFloatingLabelInputs](https://simacoders.ir/features/#ReactJsFloatingLabelInputs)
 
 ## What is new?
-In new version, `useDialCode` property is added to `PhoneInputFloatingLabel`. If this property is `true`, PhoneInput works with country dial code (e.g. +98), otherwise it works with country value (e.g. IR).
+In new version, **dark mode** is added to components. You can set `dark={true}` to active dark mode.
 
 ## Usage
 
@@ -55,6 +55,11 @@ import 'reactjs-floating-label-inputs/dist/index.css'
       <td>labelType</td>
       <td>string/number</td>
       <td>Switch label type between normal type and mui type</td>
+    </tr>
+    <tr>
+      <td>dark</td>
+      <td>boolean</td>
+      <td>Switch visual mode to dark/light</td>
     </tr>
     <tr>
       <td>minHeight</td>
