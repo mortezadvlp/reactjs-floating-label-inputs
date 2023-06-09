@@ -93,8 +93,8 @@ export default function CustomSelect ({
         onClose={() => setIsOpen(false)}
         target={
           <div className={`${styles.dFlex} ${styles.flexRow} ${styles.alignItemsStretch} ${disabled ? '' : dark ? styles.dark : ''}`} style={{minHeight: `${minHeight}px`}} >
-            <button style={{width: '90px', color: btnTextColor}} onClick={() => disabled ? {} : setIsOpen((prev) => !prev)} ref={refBtn}
-              className={`${styles.noOutline} ${styles.border0} ${styles.roundedStart} ${styles.bgPhoneButton} ${dark ? styles.dark : ''}`}>
+            <button style={{width: '110px', color: btnTextColor}} onClick={() => disabled ? {} : setIsOpen((prev) => !prev)} ref={refBtn}
+              className={`${styles.noOutline} ${styles.border0} ${styles.roundedStart} ${styles.bgPhoneButton} ${dark ? styles.dark : ''} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsCenter} ${styles.justifyContentCenter}`}>
               {countryOption ? countryOption.label2 : 'Choose'}
             </button>
             <input ref={inputRef} type="number" value={phoneValue} onChange={(e) => phoneValueHandler(e.target.value)} disabled={disabled}

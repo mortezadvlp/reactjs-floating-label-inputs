@@ -220,6 +220,9 @@
 .justifyContentBetween {
   justify-content:space-between!important;
 }
+.justifyContentCenter {
+  justify-content:center!important;
+}
 .px3 {
   padding-right:1rem!important;
   padding-left:1rem!important;
@@ -742,7 +745,7 @@
   }
   to {
     top: 50%;
-    margin-left: 75px;
+    margin-left: 85px;
     padding-left: 0.4rem;
     font-size: 100%;
   }
@@ -755,7 +758,7 @@
   }
   to {
     top: 50%;
-    margin-left: 75px;
+    margin-left: 85px;
     font-size: 100%;
   }
 }
