@@ -7,7 +7,7 @@ export default function CustomCheckBox({ text = 'Select me!', className = '', is
 
 
     return (
-        <div className={`${styles.dFlex} ${styles.flexRow} ${styles.py1} ${dark ? styles.dark : ''}`}>
+        <div className={`${styles.all} ${styles.dFlex} ${styles.flexRow} ${styles.py1} ${dark ? styles.dark : ''}`}>
             <div className={`${styles.cursorPointing}`} onClick={() => disabled ? {} : onChangeChecked(!isChecked)} 
                     style={{marginLeft: '1px', marginRight: '1px'}}>
                 {isChecked

@@ -10,10 +10,6 @@ import OptionalQuestion from './components/OptionalQuestion/OptionalQuestion'
 import CustomCheckBox from './components/CustomCheckBox/CustomCheckBox'
 import { countries, inputComponentHeightPx } from './components/constants'
 
-export const ExampleComponent = ({ text }) => {
-  return <div className={styles.test}>Example Component: {text}</div>
-}
-
 
 export const NormalInputFloatingLabel = ({label = 'Title', className = '', lineCount='1', type = 'text', disabled = false, icon = null, typingValidator = '', dir = 'ltr',
                 value = '', onChangeValue, iconClickable = false, onIconClick = ()=>{}, onFocus = ()=>{}, onBlur = ()=>{}, labelType = 1, minHeight = inputComponentHeightPx,

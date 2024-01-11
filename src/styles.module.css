@@ -6,80 +6,20 @@
 
 @charset "UTF-8";
 :root {
-  --rjfli-blue:#0d6efd;
-  --rjfli-indigo:#6610f2;
-  --rjfli-purple:#6f42c1;
-  --rjfli-pink:#d63384;
-  --rjfli-red:#dc3545;
-  --rjfli-orange:#fd7e14;
-  --rjfli-yellow:#ffc107;
-  --rjfli-green:#198754;
-  --rjfli-teal:#20c997;
-  --rjfli-cyan:#0dcaf0;
-  --rjfli-black:#000;
-  --rjfli-white:#fff;
-  --rjfli-gray:#6c757d;
-  --rjfli-gray-dark:#343a40;
-  --rjfli-gray-100:#f8f9fa;
-  --rjfli-gray-200:#e9ecef;
-  --rjfli-gray-300:#dee2e6;
-  --rjfli-gray-400:#ced4da;
-  --rjfli-gray-500:#adb5bd;
-  --rjfli-gray-600:#6c757d;
-  --rjfli-gray-700:#495057;
-  --rjfli-gray-800:#343a40;
-  --rjfli-gray-900:#212529;
-  --rjfli-primary:#0d6efd;
-  --rjfli-secondary:#6c757d;
-  --rjfli-success:#198754;
-  --rjfli-info:#0dcaf0;
-  --rjfli-warning:#ffc107;
-  --rjfli-danger:#dc3545;
-  --rjfli-light:#f8f9fa;
-  --rjfli-dark:#212529;
-  --rjfli-primary-rgb:13,110,253;
-  --rjfli-secondary-rgb:108,117,125;
-  --rjfli-success-rgb:25,135,84;
-  --rjfli-info-rgb:13,202,240;
-  --rjfli-warning-rgb:255,193,7;
-  --rjfli-danger-rgb:220,53,69;
-  --rjfli-light-rgb:248,249,250;
-  --rjfli-dark-rgb:33,37,41;
-  --rjfli-white-rgb:255,255,255;
-  --rjfli-black-rgb:0,0,0;
-  --rjfli-body-color-rgb:33,37,41;
-  --rjfli-body-bg-rgb:255,255,255;
-  --rjfli-font-sans-serif:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  --rjfli-font-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-  --rjfli-gradient:linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --rjfli-body-font-family:var(--rjfli-font-sans-serif);
-  --rjfli-body-font-size:1rem;
-  --rjfli-body-font-weight:400;
-  --rjfli-body-line-height:1.5;
-  --rjfli-body-color:#212529;
-  --rjfli-body-bg:#fff;
-  --rjfli-border-width:1px;
-  --rjfli-border-style:solid;
-  --rjfli-border-color:#dee2e6;
-  --rjfli-border-color-translucent:rgba(0, 0, 0, 0.175);
-  --rjfli-border-radius:0.375rem;
-  --rjfli-border-radius-sm:0.25rem;
-  --rjfli-border-radius-lg:0.5rem;
-  --rjfli-border-radius-xl:1rem;
-  --rjfli-border-radius-2xl:2rem;
-  --rjfli-border-radius-pill:50rem;
-  --rjfli-link-color:#0d6efd;
-  --rjfli-link-hover-color:#0a58ca;
-  --rjfli-code-color:#d63384;
-  --rjfli-highlight-bg:#fff3cd
+  --mmbfli-primary-rgb:13,110,253;
+  --mmbfli-dark-rgb:33,37,41;
+  --mmbfli-white-rgb:255,255,255;
+  --mmbfli-border-width:1px;
+  --mmbfli-border-style:solid;
+  --mmbfli-border-color:#dee2e6;
+  --mmbfli-border-radius:0.375rem;
+  --mmbfli-border-radius-sm:0.25rem;
 }
-/*
-@font-face {
-  font-family: TwemojiMozilla;
-  src: local("TwemojiMozilla"),
-      url("./fonts/TwemojiMozilla.ttf") format("truetype");
+
+.all * { 
+  box-sizing: border-box;
 }
-*/
+
 .floatEnd {
   float:right!important
 }
@@ -94,16 +34,16 @@
   padding-bottom:.25rem!important;
 }
 .textPrimary {
-  --rjfli-text-opacity:1;
-  color:rgba(var(--rjfli-primary-rgb),var(--rjfli-text-opacity))!important;
+  --mmbfli-text-opacity:1;
+  color:rgba(var(--mmbfli-primary-rgb),var(--mmbfli-text-opacity))!important;
 }
 .textDark:not(.dark) {
-  --rjfli-text-opacity:1;
-  color:rgba(var(--rjfli-dark-rgb),var(--rjfli-text-opacity))!important;
+  --mmbfli-text-opacity:1;
+  color:rgba(var(--mmbfli-dark-rgb),var(--mmbfli-text-opacity))!important;
 }
 .textDark.dark {
-  --rjfli-text-opacity:1;
-  color:rgba(var(--rjfli-white-rgb),var(--rjfli-text-opacity))!important;
+  --mmbfli-text-opacity:1;
+  color:rgba(var(--mmbfli-white-rgb),var(--mmbfli-text-opacity))!important;
 }
 .myAuto {
   margin-top:auto!important;
@@ -122,7 +62,7 @@
   align-items:stretch!important;
 }
 .borderEnd {
-  border-right:var(--rjfli-border-width) var(--rjfli-border-style) var(--rjfli-border-color)!important;
+  border-right:var(--mmbfli-border-width) var(--mmbfli-border-style) var(--mmbfli-border-color)!important;
 }
 .w100 {
   width:100%!important;
@@ -170,13 +110,13 @@
   margin-top:0.3rem!important;
 }
 .border {
-  border:var(--rjfli-border-width) var(--rjfli-border-style) var(--rjfli-border-color)!important;
+  border:var(--mmbfli-border-width) var(--mmbfli-border-style) var(--mmbfli-border-color)!important;
 }
 .rounded1 {
-  border-radius:var(--rjfli-border-radius-sm)!important;
+  border-radius:var(--mmbfli-border-radius-sm)!important;
 }
 .border2 {
-  --rjfli-border-width:2px
+  --mmbfli-border-width:2px
 }
 .m0 {
   margin:0!important;
@@ -204,15 +144,15 @@
   margin-left:.25rem!important;
 }
 .borderPrimary:not(.dark) {
-  --rjfli-border-opacity:1;
-  border-color:rgba(var(--rjfli-primary-rgb),var(--rjfli-border-opacity))!important;
+  --mmbfli-border-opacity:1;
+  border-color:rgba(var(--mmbfli-primary-rgb),var(--mmbfli-border-opacity))!important;
 }
 .borderPrimary.dark {
-  --rjfli-border-opacity:1;
-  border-color:rgba(var(--rjfli-primary-rgb),var(--rjfli-border-opacity))!important;
+  --mmbfli-border-opacity:1;
+  border-color:rgba(var(--mmbfli-primary-rgb),var(--mmbfli-border-opacity))!important;
 }
 .border1 {
-  --rjfli-border-width:1px;
+  --mmbfli-border-width:1px;
 }
 .gap2 {
   gap:.5rem!important;
@@ -228,27 +168,27 @@
   padding-left:1rem!important;
 }
 .bgPrimary {
-  --rjfli-bg-opacity:1;
-  background-color:rgba(var(--rjfli-primary-rgb),var(--rjfli-bg-opacity))!important;
+  --mmbfli-bg-opacity:1;
+  background-color:rgba(var(--mmbfli-primary-rgb),var(--mmbfli-bg-opacity))!important;
 }
 .textWhite {
-  --rjfli-text-opacity:1;
-  color:rgba(var(--rjfli-white-rgb),var(--rjfli-text-opacity))!important;
+  --mmbfli-text-opacity:1;
+  color:rgba(var(--mmbfli-white-rgb),var(--mmbfli-text-opacity))!important;
 }
 .bgTransparent {
-  --rjfli-bg-opacity:1;
+  --mmbfli-bg-opacity:1;
   background-color:transparent!important;
 }
 .pt2 {
   padding-top:.5rem!important;
 }
 .roundedStart {
-  border-bottom-left-radius:var(--rjfli-border-radius)!important;
-  border-top-left-radius:var(--rjfli-border-radius)!important;
+  border-bottom-left-radius:var(--mmbfli-border-radius)!important;
+  border-top-left-radius:var(--mmbfli-border-radius)!important;
 }
 .roundedEnd {
-  border-bottom-right-radius:var(--rjfli-border-radius)!important;
-  border-top-right-radius:var(--rjfli-border-radius)!important;
+  border-bottom-right-radius:var(--mmbfli-border-radius)!important;
+  border-top-right-radius:var(--mmbfli-border-radius)!important;
 }
 
 /*=== From mine ====*/
@@ -365,7 +305,7 @@
 .borderLabel.dark {
   mix-blend-mode: screen;
   position: absolute;
-  background-color: black !important;
+  background-color: black;
 }
 .borderLabel:not(.dark)>label {
   position: absolute;
@@ -640,8 +580,8 @@
   background-color: rgb(214, 235, 255) !important;
 }
 .optionButtonWhite.dark:hover {
-  --rjfli-text-opacity:1;
-  color:rgba(var(--rjfli-dark-rgb),var(--rjfli-text-opacity))!important;
+  --mmbfli-text-opacity:1;
+  color:rgba(var(--mmbfli-dark-rgb),var(--mmbfli-text-opacity))!important;
 }*/
 
 :global .flag-emoji {

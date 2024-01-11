@@ -36,7 +36,7 @@ export default function DateFloatingLabel({ label = 'Title', className = '', dis
     const format = "yyyy/mm/dd";
 
     return (
-        <div className={`${className}`} >
+        <div className={`${styles.all} ${className}`} >
             <div className={`${styles.borderTransparent}`} >
                 <div className={`${styles.inputWrapper} ${styles.w100} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsStretch} ${labelType == 1 ? styles.mt4 : styles.mt2} ${icon ? styles.gap1 : ''} `}
                         style={{minHeight: `${Math.max(minHeight, inputComponentHeightPx)}px`}}>

@@ -58,7 +58,7 @@ export default function OptionalQuestion({
 
 
     return (
-        <div className={`${className}`} >
+        <div className={`${styles.all} ${className}`} >
             <div className={` ${styles.border} ${styles.border1} ${disabled ? styles.borderDisable : styles.borderPrimary} ${styles.rounded1} ${styles.px1} ${styles.dFlex} ${styles.flexRow} ${styles.gap2} ${styles.justifyContentBetween} ${dark ? styles.dark : ''}`}
                 style={{minHeight: `${Math.max(minHeight, inputComponentHeightPx)}px`, marginLeft: '1px', marginRight: '1px'}}>
                 <span className={`${styles.textDark} ${styles.myAuto} ${styles.textWrap} ${dark ? styles.dark : ''}`} >{title}</span>

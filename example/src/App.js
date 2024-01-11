@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './main.min.css';
 
 import { 
@@ -38,9 +38,15 @@ const App = () => {
   const [questionData, setQuestionData] = useState(false)
   const [checkData, setCheckData] = useState(false)
 
+  const [allBgColor, setAllBgColor] = useState('#ffffff');
+
+  useEffect(() => {
+    setAllBgColor(darkMode ? '#000000' : '#ffffff');
+  }, [darkMode])
+
   return (
     <section dir={rtl ? 'rtl' : 'ltr'} style={{maxWidth: '400px', display: 'flex', flexDirection: 'column', 
-                marginLeft: 'auto', marginRight: 'auto', alignItems: 'stretch', padding: '1rem', backgroundColor: darkMode ? 'black' : 'white'}}>
+                marginLeft: 'auto', marginRight: 'auto', alignItems: 'stretch', padding: '1rem', backgroundColor: allBgColor}}>
       <div style={{maxWidth: '100%', display: 'flex', flexDirection: 'column', alignItems: 'stretch', gap: '0.25rem', padding: '1rem', border: '1px solid blue'}} >
         <span style={{marginLeft: 'auto', marginRight: 'auto', fontWeight: 'bold', color: darkMode ? 'white' : 'gray'}} >Settings</span>
         <QuestionInputFloatingLabel className='' title='Label Type Selection' dark={darkMode}
@@ -51,6 +57,10 @@ const App = () => {
             value={rtl} onChangeValue={(val) => setRtl(val)} />
         <NormalInputFloatingLabel className='' label='Minimum Height' type='IntNumber' minHeight={minHeight} dark={darkMode}
             value={minHeight} onChangeValue={(val) => setMinHeight(val)} labelType={labelType ? '1' : '2'} />
+        <div >
+            <span style={{color: darkMode ? 'white' : 'black', paddingRight: '5px'}} >Screen Background Color:</span>
+            <input type='color' value={allBgColor} onChange={e => setAllBgColor(e.target.value)} />
+        </div>
         <CheckBoxInputFloatingLabel className = '' text='Dark Mode' minHeight={minHeight} dark={darkMode}
             isChecked={darkMode} onChangeChecked={(val) => setDarkMode(val)} />
         <CheckBoxInputFloatingLabel className = '' text='Disable All' minHeight={minHeight} dark={darkMode}
