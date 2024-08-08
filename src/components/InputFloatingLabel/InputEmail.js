@@ -11,7 +11,7 @@ export default function InputEmail(
         onFocus = ()=>{}, onBlur = ()=>{}, onValidate = ()=>{}, labelType = 1, dark = false, required = false }) {
 
     const onBlurHandler = () => {
-        var validate = fale;
+        var validate = false;
         if (required) {
             validate = (value !== '' && validateEmail(value));
         }

@@ -30,7 +30,13 @@ export default function PhoneFloatingLabel({
             onFocus();
         }
         else {
-            const validate = validatePhone(phoneValue);
+            var validate = false;
+            if (required) {
+                validate = (phoneValue !== '' && validatePhone(phoneValue));
+            }
+            else {
+                validate = validatePhone(phoneValue);
+            }
             onBlur();
             onValidate(validate);
         }
