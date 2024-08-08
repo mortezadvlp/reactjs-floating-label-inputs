@@ -10,7 +10,7 @@ const { colors } = defaultTheme;
 
 export default function CustomSelect ({
       countryValue = defaultCountryCode, phoneValue = '', setCountryValue = ()=>{}, setPhoneValue = ()=>{}, disabled = false, minHeight = inputComponentHeightPx,
-      forceFocus = false, onFocus, onBlur, useDialCode = false, dark = false }) {
+      forceFocus = false, onFocus, onBlur, useDialCode = false, dark = false, required = false }) {
 
   const [isOpen, setIsOpen] = useState(false);
   const [countryOption, setCountryOption] = useState('');
@@ -136,6 +136,7 @@ export default function CustomSelect ({
             tabSelectsValue={false}
             value={countryOption}
             filterOption={createFilter(filterConfig)}
+            required={required}
           />
         </div>
         

@@ -16,7 +16,7 @@ Visit this link:
 [https://simacoders.ir/features/#ReactJsFloatingLabelInputs](https://simacoders.ir/features/#ReactJsFloatingLabelInputs)
 
 ## What is new?
-In new version, **dark mode** is added to components. You can set `dark={true}` to active dark mode.
+In new version, **required** property is added to components.
 
 ## Usage
 
@@ -65,6 +65,11 @@ import 'reactjs-floating-label-inputs/dist/index.css'
       <td>minHeight</td>
       <td>number</td>
       <td>minimum height of component (should be greater than 35)</td>
+    </tr>
+    <tr>
+      <td>required</td>
+      <td>boolean</td>
+      <td>Checking required in for validation</td>
     </tr>
     <tr>
       <td>onChangeValue</td>

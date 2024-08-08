@@ -11,7 +11,7 @@ import gregorian_en from "react-date-object/locales/gregorian_en"
 import styles from '../../styles.module.css';
 
 export default function DateFloatingLabel({ label = 'Title', className = '', disabled = false, shamsiMode = false, persianLanguage = false, minHeight = inputComponentHeightPx,
-    value = '', onChangeValue, onFocus = ()=>{}, onBlur = ()=>{}, hasIcon = false, icon = null, labelType = 1, dark = false }) {
+    value = '', onChangeValue, onFocus = ()=>{}, onBlur = ()=>{}, hasIcon = false, icon = null, labelType = 1, dark = false, required = false }) {
 
     const [hasFocus, setHasFocus] = useState(false);
     const [showTextHolder, setShowTextHolder] = useState(value === '' && !hasFocus);
@@ -54,6 +54,7 @@ export default function DateFloatingLabel({ label = 'Title', className = '', dis
                         onClose={() => onInputFocus(false)}
                         editable={false}
                         disabled={disabled}
+                        required={required}
                     />
                     {(value !== '')&&
                         <div className={`${!disabled ? styles.cursorPointing : ''} ${styles.myAuto} ${styles.p0} ${styles.mx1} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsCenter}`} onClick={() => disabled ? {} : onChangeValue('')} >

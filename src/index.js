@@ -13,54 +13,54 @@ import { countries, inputComponentHeightPx } from './components/constants'
 
 export const NormalInputFloatingLabel = ({label = 'Title', className = '', lineCount='1', type = 'text', disabled = false, icon = null, typingValidator = '', dir = 'ltr',
                 value = '', onChangeValue, iconClickable = false, onIconClick = ()=>{}, onFocus = ()=>{}, onBlur = ()=>{}, labelType = 1, minHeight = inputComponentHeightPx,
-                dark = false}) => {
+                dark = false, required = false}) => {
   return (
     <InputFloatingLabel label={label} className={className} lineCount={lineCount} format='' disabled={disabled} icon={icon} typingValidator={typingValidator} dir={dir}
       type = {type} value={value} onChangeValue={onChangeValue} iconClickable={iconClickable} onIconClick={onIconClick} labelType={labelType} minHeight={minHeight}
-      onFocus={onFocus} onBlur={onBlur} dark={dark} />
+      onFocus={onFocus} onBlur={onBlur} dark={dark} required={required} />
   )
 }
 
 export const DateInputFloatingLabel = ({label = 'Title', className = '', disabled = false, shamsiMode = false, persianLanguage = false, minHeight = inputComponentHeightPx,
-                value = '', onChangeValue, onFocus = ()=>{}, onBlur = ()=>{}, hasIcon = false, icon = null, labelType = 1, dark = false}) => {
+                value = '', onChangeValue, onFocus = ()=>{}, onBlur = ()=>{}, hasIcon = false, icon = null, labelType = 1, dark = false, required = false}) => {
   return (
     <DateFloatingLabel label={label} className={className} disabled={disabled} shamsiMode={shamsiMode} persianLanguage={persianLanguage} labelType={labelType} minHeight={minHeight}
-      value={value} onChangeValue={onChangeValue} onFocus={onFocus} onBlur={onBlur} hasIcon={hasIcon} icon={icon} dark={dark} />
+      value={value} onChangeValue={onChangeValue} onFocus={onFocus} onBlur={onBlur} hasIcon={hasIcon} icon={icon} dark={dark} required={required} />
   )
 }
 
-export const EmailInputFloatingLabel = ({className = '', label = 'Email Address', value = '', onChangeValue = () => {}, disabled = false, dark = false,
+export const EmailInputFloatingLabel = ({className = '', label = 'Email Address', value = '', onChangeValue = () => {}, disabled = false, dark = false, required = false, 
                 hasIcon = false, icon = null, onFocus = ()=>{}, onBlur = ()=>{}, onValidate = ()=>{}, labelType = 1, minHeight = inputComponentHeightPx}) => {
   return (
     <InputEmail className={className} label={label} value={value} onChangeValue={onChangeValue} disabled={disabled} minHeight={minHeight}
-        hasIcon={hasIcon} icon={icon} onFocus={onFocus} onBlur={onBlur} onValidate={onValidate} labelType={labelType} dark={dark} />
+        hasIcon={hasIcon} icon={icon} onFocus={onFocus} onBlur={onBlur} onValidate={onValidate} labelType={labelType} dark={dark} required={required} />
   )
 }
 
-export const PasswordInputFloatingLabel = ({className = '', label = 'Password', value = '', onChangeValue = () => {}, disabled = false,
+export const PasswordInputFloatingLabel = ({className = '', label = 'Password', value = '', onChangeValue = () => {}, disabled = false, required = false,
                 onFocus = ()=>{}, onBlur = ()=>{}, hasIcon = false, labelType = 1, minHeight = inputComponentHeightPx, dark = false}) => {
   return (
     <InputPassword className={className} label={label} value={value} onChangeValue={onChangeValue} disabled={disabled} minHeight={minHeight}
-        onFocus={onFocus} onBlur={onBlur} hasIcon={hasIcon} labelType={labelType} dark={dark} />
+        onFocus={onFocus} onBlur={onBlur} hasIcon={hasIcon} labelType={labelType} dark={dark} required={required} />
   )
 }
 
-export const SelectInputFloatingLabel = ({label = 'Title', className = '', options = [], disabled = false, dark = false,
+export const SelectInputFloatingLabel = ({label = 'Title', className = '', options = [], disabled = false, dark = false, required = false,
                 value = '', onChangeValue, colorPrimary = primaryColor, labelType = 1, minHeight = inputComponentHeightPx}) => {
   return (
     <SelectFloatingLabel label={label} className={className} options={options} disabled={disabled} minHeight={minHeight}
-        value={value} onChangeValue={onChangeValue} colorPrimary={colorPrimary} labelType={labelType} dark={dark} />
+        value={value} onChangeValue={onChangeValue} colorPrimary={colorPrimary} labelType={labelType} dark={dark} required={required} />
   )
 }
 
 export const PhoneInputFloatingLabel = ({label = 'Title', className = '', disabled = false, useDialCode = false,
                 countryValue = defaultCountryCode, phoneValue = '', onChangeCountryValue = ()=>{}, onChangePhoneValue = ()=>{},
                 onFocus = ()=>{}, onBlur = ()=>{}, onValidate = ()=>{}, labelType = 1, minHeight = inputComponentHeightPx,
-                dark = false}) => {
+                dark = false, required = false}) => {
   return (
     <PhoneFloatingLabel label={label} className={className} disabled={disabled} labelType={labelType} minHeight={minHeight} useDialCode={useDialCode}
         countryValue={countryValue} phoneValue={phoneValue} onChangeCountryValue={onChangeCountryValue} onChangePhoneValue={onChangePhoneValue}
-        onFocus={onFocus} onBlur={onBlur} onValidate={onValidate} dark={dark} />
+        onFocus={onFocus} onBlur={onBlur} onValidate={onValidate} dark={dark} required={required} />
   )
 }
 

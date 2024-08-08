@@ -8,7 +8,8 @@ import styles from '../../styles.module.css';
 
 export default function InputFloatingLabel({
         label = 'Title', className = '', lineCount = '1', format = '', disabled = false, icon = null, typingValidator = '', minHeight = inputComponentHeightPx,
-        type = 'text', value = '', onChangeValue, iconClickable = false, onIconClick, onFocus = ()=>{}, onBlur = ()=>{}, labelType = 1, dark = false }) {
+        type = 'text', value = '', onChangeValue, iconClickable = false, onIconClick, onFocus = ()=>{}, onBlur = ()=>{}, labelType = 1, dark = false,
+        required = false }) {
 
     const realType = (type === 'IntNumber' || type === 'FloatNumber') ? 'text' : type;
     const [hasFocus, setHasFocus] = useState(false);
@@ -53,11 +54,11 @@ export default function InputFloatingLabel({
                         style={{minHeight: `${Math.max(minHeight, inputComponentHeightPx)}px`}}>
                     {Number(lineCount) <= 1
                     ?
-                    <input ref={mainRef} type={realType} value={value} onChange={(e) => handleChangeValue(e.target.value)}
+                    <input ref={mainRef} type={realType} value={value} onChange={(e) => handleChangeValue(e.target.value)} required={required}
                         className={`${styles.bgInput} ${styles.bgTransparent} ${styles.noOutline} ${styles.border0} ${styles.w100} ${styles.p1} ${styles.px2} ${styles.textDark} ${dark ? styles.dark : ''}`} disabled={disabled}
                         onFocus={() => onInputFocus(true)} onBlur={() => onInputFocus(false)} />
                     :
-                    <textarea ref={mainRef} rows={String(lineCount)} value={value} onChange={(e) => onChangeValue(e.target.value)}
+                    <textarea ref={mainRef} rows={String(lineCount)} value={value} onChange={(e) => onChangeValue(e.target.value)} required={ required={required}}
                         className={`${styles.bgInput} ${styles.bgTransparent} ${styles.noOutline} ${styles.border0} ${styles.w100} ${styles.p2} ${styles.textDark} ${dark ? styles.dark : ''}`} disabled={disabled}
                         onFocus={() => onInputFocus(true)} onBlur={() => onInputFocus(false)} />
                     }

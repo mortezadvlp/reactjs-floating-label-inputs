@@ -11,7 +11,7 @@ import styles from '../../styles.module.css';
 export default function PhoneFloatingLabel({
         label = 'Title', className = '', disabled = false, useDialCode = false,
         countryValue = defaultCountryCode, phoneValue = '', onChangeCountryValue = ()=>{}, onChangePhoneValue = ()=>{}, minHeight = inputComponentHeightPx,
-        onFocus = ()=>{}, onBlur = ()=>{}, onValidate = ()=>{}, labelType = 1, dark = false }) {
+        onFocus = ()=>{}, onBlur = ()=>{}, onValidate = ()=>{}, labelType = 1, dark = false, required = false }) {
 
     const [gotFocus, setGotFocus] = useState(false);
     const [showTextHolder, setShowTextHolder] = useState(phoneValue === '');
@@ -48,7 +48,7 @@ export default function PhoneFloatingLabel({
                     <CustomSelect countryValue={countryValue} phoneValue={phoneValue} disabled={disabled} useDialCode={useDialCode}
                         setCountryValue={onChangeCountryValue} setPhoneValue={onChangePhoneValue} dark={dark}
                         forceFocus={forceInputFocus} minHeight={Math.max(minHeight, inputComponentHeightPx)}
-                        onFocus={() => disabled ? {} : onInputFocus(true)} onBlur={() => onInputFocus(false)} />
+                        onFocus={() => disabled ? {} : onInputFocus(true)} onBlur={() => onInputFocus(false)} required={required} />
                     <div className={`${styles.borderLabel} ${styles.border} ${styles.rounded1} ${showTextHolder ? '' : styles.border2} ${disabled ? `${styles.bgDisable} ${styles.borderDisable}` : `${styles.borderPrimary} border-primary`} ${dark ? styles.dark : ''}`} >
                         <label className={`${showTextHolder ? `${styles.selectLabelPhoneBlur} ${styles.textGray}` : `${styles.selectLabelPhoneFocus} ${styles.textPrimary} text-primary`} ${labelType == 1 ? '' : styles.type2} ${dark ? styles.dark : ''}`} >{label}</label>
                     </div>

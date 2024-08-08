@@ -8,7 +8,7 @@ import styles from '../../styles.module.css';
 
 export default function SelectFloatingLabel({
         label = 'Title', className = '', options = [], disabled = false, minHeight = inputComponentHeightPx,
-        value = '', onChangeValue, colorPrimary = primaryColor, labelType = 1, dark = false }) {
+        value = '', onChangeValue, colorPrimary = primaryColor, labelType = 1, dark = false, required = false }) {
 
     const [gotFocus, setGotFocus] = useState(false);
     const [showTextHolder, setShowTextHolder] = useState(value === '');
@@ -49,6 +49,7 @@ export default function SelectFloatingLabel({
                         value={objValue} onChange={onSelectValueChanged} openMenuOnFocus
                         onFocus={() => onSelectFocus(true)}
                         onBlur={() => onSelectFocus(false)}
+                        required={required}
                         styles={{
                             input: (baseStyles, state) => ({
                                 ...baseStyles,
