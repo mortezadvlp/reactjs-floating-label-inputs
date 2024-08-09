@@ -58,7 +58,7 @@ export default function InputFloatingLabel({
                         className={`${styles.bgInput} ${styles.bgTransparent} ${styles.noOutline} ${styles.border0} ${styles.w100} ${styles.p1} ${styles.px2} ${styles.textDark} ${dark ? styles.dark : ''}`} disabled={disabled}
                         onFocus={() => onInputFocus(true)} onBlur={() => onInputFocus(false)} />
                     :
-                    <textarea ref={mainRef} rows={String(lineCount)} value={value} onChange={(e) => onChangeValue(e.target.value)} required={ required={required}}
+                    <textarea ref={mainRef} rows={String(lineCount)} value={value} onChange={(e) => onChangeValue(e.target.value)} required={required}
                         className={`${styles.bgInput} ${styles.bgTransparent} ${styles.noOutline} ${styles.border0} ${styles.w100} ${styles.p2} ${styles.textDark} ${dark ? styles.dark : ''}`} disabled={disabled}
                         onFocus={() => onInputFocus(true)} onBlur={() => onInputFocus(false)} />
                     }
