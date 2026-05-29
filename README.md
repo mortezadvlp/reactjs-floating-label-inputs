@@ -13,7 +13,7 @@ npm install --save reactjs-floating-label-inputs
 ## Online Demo
 
 Visit this link:
-[https://simacoders.ir/features/#ReactJsFloatingLabelInputs](https://simacoders.ir/features/#ReactJsFloatingLabelInputs)
+[https://mortezadvlp.ir/LibrariesDemo/#ReactJsFloatingLabelInputs](https://mortezadvlp.ir/LibrariesDemo/#ReactJsFloatingLabelInputs)
 
 ## What is new?
 In new version, **required** property is added to components.
